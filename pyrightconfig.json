@@ -1,0 +1,20 @@
+{
+    "include": [
+        "src",
+        "packages/ontology/src",
+        "packages/tap-pdip/src",
+        "packages/target-oxigraph/src",
+        "packages/target-rdf-file/src"
+    ],
+    "exclude": [
+        "**/__pycache__",
+        "**/.venv",
+        "**/node_modules",
+        "**/dist",
+        "**/build"
+    ],
+    "pythonVersion": "3.13",
+    "typeCheckingMode": "standard",
+    "reportMissingImports": "error",
+    "reportMissingTypeStubs": false,
+}

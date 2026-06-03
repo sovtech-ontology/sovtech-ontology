@@ -1,0 +1,37 @@
+target-version = "py313"
+line-length = 88
+
+[lint]
+# Explicit curated set (safer than "ALL" — survives Ruff upgrades)
+select = [
+    "F",    # Pyflakes
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # comprehensions
+    "SIM",  # simplifications
+    "RET",  # return practices
+    "PTH",  # use pathlib
+    "TID",  # tidy imports
+    "TC",   # typing-only imports in TYPE_CHECKING
+    "ANN",  # type annotations
+    "S",    # flake8-bandit (security)
+]
+
+ignore = [
+    "E501",   # line length — handled by the formatter
+    "COM812", # conflicts with the formatter
+    "ISC001", # conflicts with the formatter
+]
+
+[lint.per-file-ignores]
+"**/tests/**" = ["S101"]
+
+[lint.isort]
+known-first-party = ["ontology", "tap_pdip", "target_oxigraph", "target_rdf_file"]
+
+[format]
+quote-style = "double"
+indent-style = "space"

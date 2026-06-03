@@ -3,14 +3,12 @@ name = "sovtech-ontology"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.13"
 dependencies = [
     "ontology",
     "tap-pdip",
     "target-oxigraph",
     "target-rdf-file",
-    "mypy>=2.1.0",
-    "ruff>=0.15.15",
 ]
 
 [tool.uv.sources]
@@ -21,14 +19,17 @@ target-rdf-file = { workspace = true }
 
 [tool.uv.workspace]
 members = [
-    "packages/ontology",
-    "packages/tap-pdip",
-    "packages/target-oxigraph",
-    "packages/target-rdf-file",
+    "packages/*",
 ]
 
 [dependency-groups]
 dev = [
+    "isort>=8.0.1",
     "pyright>=1.1.410",
+    "pytest>=9.0.3",
     "ruff>=0.15.15",
 ]
+
+[build-system]
+requires = ["uv_build>=0.11.18,<0.12"]
+build-backend = "uv_build"
