@@ -9,6 +9,7 @@ dependencies = [
     "tap-pdip",
     "target-oxigraph",
     "target-rdf-file",
+
 ]
 
 [tool.uv.sources]
@@ -25,11 +26,24 @@ members = [
 [dependency-groups]
 dev = [
     "isort>=8.0.1",
+    "mypy>=2.1.0",
     "pyright>=1.1.410",
     "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
     "ruff>=0.15.15",
+    "tee>=0.0.3",
 ]
 
 [build-system]
 requires = ["uv_build>=0.11.18,<0.12"]
 build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+testpaths = [
+    "tests",
+    "packages/ontology/tests",
+    "packages/tap-pdip/tests",
+    "packages/target-oxigraph/tests",
+    "packages/target-rdf-file/tests",
+]

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+uv run isort src packages tests
+uv run ruff format src packages tests
