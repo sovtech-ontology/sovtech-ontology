@@ -534,7 +534,6 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
             "description": "Immunity waived for suit and execution.",
         },
         "No": {
-            "name": "None",
             "description": "No waiver of sovereign immunity.",
         },
         "Selective": {
