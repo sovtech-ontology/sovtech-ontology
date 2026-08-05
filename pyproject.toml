@@ -38,6 +38,16 @@ dev = [
 requires = ["uv_build>=0.11.18,<0.12"]
 build-backend = "uv_build"
 
+[tool.isort]
+profile = "black"
+known_first_party = [
+    "ontology",
+    "sovtech_ontology",
+    "tap_pdip",
+    "target_oxigraph",
+    "target_rdf_file",
+]
+
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib"
 testpaths = [
