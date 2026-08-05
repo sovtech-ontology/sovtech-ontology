@@ -4,7 +4,6 @@
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "svto": "https://purl.org/svto/ontology#",
         "svto-cbox": "https://purl.org/svto/cbox#",
-        "svto-data": "https://purl.org/svto/data/",
         "AdministrativeArea": "schema:AdministrativeArea",
         "Agreement": "svto:Agreement",
         "AgreementType": "svto:AgreementType",
