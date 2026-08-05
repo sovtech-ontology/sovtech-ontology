@@ -46,6 +46,10 @@
             "@type": "@id",
             "@container": "@set"
         },
+        "additionalType": {
+            "@id": "schema:additionalType",
+            "@type": "@id"
+        },
         "agreementType": {
             "@id": "svto:agreementType",
             "@type": "@id"
@@ -119,6 +123,7 @@
             "@type": "@id"
         },
         "effectiveDate": "svto:effectiveDate",
+        "encodingFormat": "schema:encodingFormat",
         "endDate": "schema:endDate",
         "eventType": {
             "@id": "svto:eventType",
