@@ -1,0 +1,272 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "svto": "https://purl.org/svto/ontology#",
+        "svto-cbox": "https://purl.org/svto/cbox#",
+        "svto-data": "https://purl.org/svto/data/",
+        "AdministrativeArea": "schema:AdministrativeArea",
+        "Agreement": "svto:Agreement",
+        "AgreementType": "svto:AgreementType",
+        "CollectiveActionClauseType": "svto:CollectiveActionClauseType",
+        "ContractProvision": "svto:ContractProvision",
+        "Country": "schema:Country",
+        "CreativeWork": "schema:CreativeWork",
+        "DebtInstrument": "svto:DebtInstrument",
+        "DebtInstrumentType": "svto:DebtInstrumentType",
+        "DefinedTerm": "skos:Concept",
+        "DigitalDocument": "schema:DigitalDocument",
+        "DocumentClass": "svto:DocumentClass",
+        "DocumentSectionType": "svto:DocumentSectionType",
+        "Event": "schema:Event",
+        "EventType": "svto:EventType",
+        "GoverningLaw": "svto:GoverningLaw",
+        "InterestRateType": "svto:InterestRateType",
+        "IssuerType": "svto:IssuerType",
+        "MediaObject": "schema:MediaObject",
+        "MonetaryAmount": "schema:MonetaryAmount",
+        "Organization": "schema:Organization",
+        "OrganizationRole": "schema:OrganizationRole",
+        "OrganizationRoleCategory": "svto:OrganizationRoleCategory",
+        "OrganizationRoleName": "svto:OrganizationRoleName",
+        "PariPassuType": "svto:PariPassuType",
+        "PaymentFrequency": "svto:PaymentFrequency",
+        "Person": "schema:Person",
+        "PersonRole": "svto:PersonRole",
+        "PersonRoleCategory": "svto:PersonRoleCategory",
+        "PersonRoleName": "svto:PersonRoleName",
+        "Place": "schema:Place",
+        "ProvisionType": "svto:ProvisionType",
+        "QuantitativeValue": "schema:QuantitativeValue",
+        "Seniority": "svto:Seniority",
+        "SovereignImmunityWaiverType": "svto:SovereignImmunityWaiverType",
+        "TextObject": "schema:TextObject",
+        "VotingAggregationMethod": "svto:VotingAggregationMethod",
+        "about": {
+            "@id": "schema:about",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "agreementType": {
+            "@id": "svto:agreementType",
+            "@type": "@id"
+        },
+        "altLabel": {
+            "@id": "skos:altLabel",
+            "@container": "@set"
+        },
+        "amends": {
+            "@id": "svto:amends",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "amountIssued": {
+            "@id": "svto:amountIssued",
+            "@type": "@id"
+        },
+        "associatedMedia": {
+            "@id": "schema:associatedMedia",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "author": {
+            "@id": "schema:author",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "broader": {
+            "@id": "skos:broader",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "cacType": {
+            "@id": "svto:cacType",
+            "@type": "@id"
+        },
+        "closeMatch": {
+            "@id": "skos:closeMatch",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "commitmentAmount": {
+            "@id": "svto:commitmentAmount",
+            "@type": "@id"
+        },
+        "completes": {
+            "@id": "svto:completes",
+            "@type": "@id"
+        },
+        "containedInPlace": {
+            "@id": "schema:containedInPlace",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "contentSize": "schema:contentSize",
+        "contentUrl": "schema:contentUrl",
+        "currency": "schema:currency",
+        "datePublished": "schema:datePublished",
+        "debtInstrumentType": {
+            "@id": "svto:debtInstrumentType",
+            "@type": "@id"
+        },
+        "definedIn": {
+            "@id": "svto:definedIn",
+            "@type": "@id"
+        },
+        "definition": "skos:definition",
+        "description": "schema:description",
+        "documentClass": {
+            "@id": "svto:documentClass",
+            "@type": "@id"
+        },
+        "effectiveDate": "svto:effectiveDate",
+        "endDate": "schema:endDate",
+        "eventType": {
+            "@id": "svto:eventType",
+            "@type": "@id"
+        },
+        "exactMatch": {
+            "@id": "skos:exactMatch",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "executionDate": "svto:executionDate",
+        "governedBy": {
+            "@id": "svto:governedBy",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "governingLaw": {
+            "@id": "svto:governingLaw",
+            "@type": "@id"
+        },
+        "gracePeriod": {
+            "@id": "svto:gracePeriod",
+            "@type": "@id"
+        },
+        "hasPart": {
+            "@id": "schema:hasPart",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "identifier": "schema:identifier",
+        "immunityWaiverType": {
+            "@id": "svto:immunityWaiverType",
+            "@type": "@id"
+        },
+        "inLanguage": "schema:inLanguage",
+        "incorporatesByReference": {
+            "@id": "svto:incorporatesByReference",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "interestPaymentFrequency": {
+            "@id": "svto:interestPaymentFrequency",
+            "@type": "@id"
+        },
+        "interestRate": {
+            "@id": "svto:interestRate",
+            "@type": "@id"
+        },
+        "interestRateType": {
+            "@id": "svto:interestRateType",
+            "@type": "@id"
+        },
+        "isPartOf": {
+            "@id": "schema:isPartOf",
+            "@type": "@id"
+        },
+        "issueDate": "svto:issueDate",
+        "issuePrice": {
+            "@id": "svto:issuePrice",
+            "@type": "@id"
+        },
+        "issuerType": {
+            "@id": "schema:additionalType",
+            "@type": "@id"
+        },
+        "jurisdiction": {
+            "@id": "svto:jurisdiction",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "leiCode": "schema:leiCode",
+        "location": {
+            "@id": "schema:location",
+            "@type": "@id"
+        },
+        "maturityDate": "svto:maturityDate",
+        "maxValue": "schema:maxValue",
+        "memberOf": {
+            "@id": "schema:memberOf",
+            "@type": "@id"
+        },
+        "minValue": "schema:minValue",
+        "name": "schema:name",
+        "pageEnd": "schema:pageEnd",
+        "pageStart": "schema:pageStart",
+        "parentOrganization": {
+            "@id": "schema:parentOrganization",
+            "@type": "@id"
+        },
+        "pariPassuType": {
+            "@id": "svto:pariPassuType",
+            "@type": "@id"
+        },
+        "perSeriesVotingThreshold": {
+            "@id": "svto:perSeriesVotingThreshold",
+            "@type": "@id"
+        },
+        "prefLabel": "skos:prefLabel",
+        "provisionType": {
+            "@id": "svto:provisionType",
+            "@type": "@id"
+        },
+        "publisher": {
+            "@id": "schema:publisher",
+            "@type": "@id"
+        },
+        "related": {
+            "@id": "skos:related",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "roleName": {
+            "@id": "schema:roleName",
+            "@type": "@id"
+        },
+        "sectionType": {
+            "@id": "svto:sectionType",
+            "@type": "@id"
+        },
+        "seniority": {
+            "@id": "svto:seniority",
+            "@type": "@id"
+        },
+        "sha256": "svto:sha256",
+        "source": "svto:source",
+        "sourceText": {
+            "@id": "svto:sourceText",
+            "@type": "@id"
+        },
+        "startDate": "schema:startDate",
+        "text": "schema:text",
+        "underProvision": {
+            "@id": "svto:underProvision",
+            "@type": "@id"
+        },
+        "uniformlyApplicableRequired": "svto:uniformlyApplicableRequired",
+        "unitCode": "schema:unitCode",
+        "unitText": "schema:unitText",
+        "url": "schema:url",
+        "value": "schema:value",
+        "votingAggregationMethod": {
+            "@id": "svto:votingAggregationMethod",
+            "@type": "@id"
+        },
+        "votingThreshold": {
+            "@id": "svto:votingThreshold",
+            "@type": "@id"
+        }
+    }
+}

@@ -11,9 +11,7 @@ INPUT_DATA_DIRECTORY_PATH = DATA_DIRECTORY_PATH / "input"
 class Config(BaseSettings):
     """Pydantic BaseSettings to store config variables."""
 
-    sovtech_jsonld_context: FilePath = (
-        INPUT_DATA_DIRECTORY_PATH / "sovtech_jsonld_context.json"
-    )
+    sovtech_jsonld_context: FilePath = INPUT_DATA_DIRECTORY_PATH / "context.json"
 
     model_config = SettingsConfigDict(
         env_file=(
