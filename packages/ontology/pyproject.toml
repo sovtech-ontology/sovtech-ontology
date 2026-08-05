@@ -8,6 +8,7 @@ dependencies = [
     "annotated-types>=0.7.0",
     "pydantic>=2.13.4",
     "pydantic-settings>=2.12.1",
+    "pyld>=2.0.4",
 ]
 
 [build-system]
