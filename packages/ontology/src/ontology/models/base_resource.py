@@ -51,7 +51,6 @@ class BaseResource(BaseModel, ABC):
         explicitly, typically with `return super().to_rdf(jsonld_context)`.
         """
 
-        # pyld is untyped; with a "format" option to_rdf always returns str.
         return cast(
             "str",
             jsonld.to_rdf(
