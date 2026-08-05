@@ -49,7 +49,7 @@ class Country(BaseResource):
             title="Identifier",
         ).generate_meta(),
     ] = None
-    name: Annotated[str, Thing.Fields.NAME]
+    name: Annotated[str | None, Thing.Fields.NAME] = None
 
     @classmethod
     @override

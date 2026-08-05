@@ -39,7 +39,7 @@ class Place(BaseResource):
             title="Contained In Place",
         ).generate_meta(),
     ] = Field(default=None, alias="containedInPlace")
-    name: Annotated[str, Thing.Fields.NAME]
+    name: Annotated[str | None, Thing.Fields.NAME] = None
 
     @classmethod
     @override
