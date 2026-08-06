@@ -2,7 +2,7 @@ from typing import Annotated, Literal, override
 
 from pydantic import AnyUrl, ConfigDict, Field
 
-from ontology.models.cbox.organization_role_name import OrganizationRoleName
+from ontology.models.cbox import OrganizationRoleName
 from ontology.models.iri import Iri
 from ontology.models.named_individual_iri_enum import named_individual_iri_enum
 from ontology.models.named_individuals import named_individuals

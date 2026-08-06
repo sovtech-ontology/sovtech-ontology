@@ -2,7 +2,7 @@ from typing import Annotated, Literal, override
 
 from pydantic import AnyUrl, ConfigDict, Field
 
-from ontology.models.cbox.document_class import DocumentClass
+from ontology.models.cbox import DocumentClass
 from ontology.models.creative_work import CreativeWork
 from ontology.models.iri import Iri
 from ontology.models.media_object import MediaObject

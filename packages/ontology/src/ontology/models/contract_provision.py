@@ -4,15 +4,13 @@ from pydantic import AnyUrl, ConfigDict, Field
 
 from ontology.models.agreement import Agreement
 from ontology.models.base_resource import BaseResource
-from ontology.models.cbox.collective_action_clause_type import (
+from ontology.models.cbox import (
     CollectiveActionClauseType,
-)
-from ontology.models.cbox.pari_passu_type import PariPassuType
-from ontology.models.cbox.provision_type import ProvisionType
-from ontology.models.cbox.sovereign_immunity_waiver_type import (
+    PariPassuType,
+    ProvisionType,
     SovereignImmunityWaiverType,
+    VotingAggregationMethod,
 )
-from ontology.models.cbox.voting_aggregation_method import VotingAggregationMethod
 from ontology.models.iri import Iri
 from ontology.models.named_individual_iri_enum import named_individual_iri_enum
 from ontology.models.named_individuals import named_individuals
