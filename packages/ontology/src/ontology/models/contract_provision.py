@@ -77,7 +77,7 @@ class ContractProvision(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="immunityWaiverType")
     is_part_of: Annotated[
-        Iri,
+        Iri | None,
         Thing.Fields.IS_PART_OF,
         PropertyMeta(
             description=(
@@ -87,7 +87,7 @@ class ContractProvision(BaseResource):
             range_=(Agreement, "ContractProvision"),
             title="Is Part Of",
         ).generate_meta(),
-    ] = Field(alias="isPartOf")
+    ] = Field(default=None, alias="isPartOf")
     name: Annotated[str | None, Thing.Fields.NAME] = None
     pari_passu_type: Annotated[
         AnyUrl | None,

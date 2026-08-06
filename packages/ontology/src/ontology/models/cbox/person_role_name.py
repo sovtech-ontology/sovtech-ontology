@@ -38,14 +38,14 @@ class PersonRoleName(BaseResource):
     )
     type_: Literal["PersonRoleName"] = Field(alias="@type")
     additional_type: Annotated[
-        Iri,
+        Iri | None,
         Thing.Fields.ADDITIONAL_TYPE,
         PropertyMeta(
             description="The broad category this role name falls under.",
             range_=PersonRoleCategory,
             title="Additional Type",
         ).generate_meta(),
-    ] = Field(alias="additionalType")
+    ] = Field(default=None, alias="additionalType")
     description: Annotated[str | None, Thing.Fields.DESCRIPTION] = None
     name: Annotated[str | None, Thing.Fields.NAME] = None
 

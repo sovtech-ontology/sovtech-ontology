@@ -67,14 +67,14 @@ class Organization(BaseResource):
         ).generate_meta(),
     ] = None
     member_of: Annotated[
-        tuple[Iri, ...],
+        tuple[Iri, ...] | None,
         Thing.Fields.MEMBER_OF,
         PropertyMeta(
             description="The organization roles this organization fills.",
             range_=OrganizationRole,
             title="Member Of",
         ).generate_meta(),
-    ] = Field(alias="memberOf")
+    ] = Field(default=None, alias="memberOf")
     name: Annotated[str | None, Thing.Fields.NAME] = None
     parent_organization: Annotated[
         Iri | None,

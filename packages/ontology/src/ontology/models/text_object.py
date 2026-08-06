@@ -36,14 +36,14 @@ class TextObject(CreativeWork):
 
     type_: Literal["TextObject"] = Field(alias="@type")
     is_part_of: Annotated[
-        Iri,
+        Iri | None,
         Thing.Fields.IS_PART_OF,
         PropertyMeta(
             description="The document this text part belongs to.",
             range_="DigitalDocument",
             title="Is Part Of",
         ).generate_meta(),
-    ] = Field(alias="isPartOf")
+    ] = Field(default=None, alias="isPartOf")
     page_end: Annotated[
         int | None,
         PropertyMeta(

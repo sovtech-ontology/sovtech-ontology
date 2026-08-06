@@ -34,14 +34,14 @@ class Person(BaseResource):
     type_: Literal["Person"] = Field(alias="@type")
     description: Annotated[str | None, Thing.Fields.DESCRIPTION] = None
     member_of: Annotated[
-        tuple[Iri, ...],
+        tuple[Iri, ...] | None,
         Thing.Fields.MEMBER_OF,
         PropertyMeta(
             description="The person roles this person fills.",
             range_=PersonRole,
             title="Member Of",
         ).generate_meta(),
-    ] = Field(alias="memberOf")
+    ] = Field(default=None, alias="memberOf")
     name: Annotated[str | None, Thing.Fields.NAME] = None
 
     @classmethod
