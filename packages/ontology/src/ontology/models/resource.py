@@ -7,6 +7,7 @@ from ontology.models.agreement import Agreement
 from ontology.models.cbox import (
     AgreementType,
     CollectiveActionClauseType,
+    Country,
     DebtInstrumentType,
     DocumentClass,
     DocumentSectionType,
@@ -26,7 +27,6 @@ from ontology.models.cbox import (
     VotingAggregationMethod,
 )
 from ontology.models.contract_provision import ContractProvision
-from ontology.models.country import Country
 from ontology.models.debt_instrument import DebtInstrument
 from ontology.models.defined_term import DefinedTerm
 from ontology.models.digital_document import DigitalDocument

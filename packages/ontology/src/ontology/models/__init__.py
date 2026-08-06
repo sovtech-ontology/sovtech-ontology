@@ -4,7 +4,6 @@ from ontology.models.base_resource import BaseResource as BaseResource
 from ontology.models.base_resource import default_context as default_context
 from ontology.models.config import Config as Config
 from ontology.models.contract_provision import ContractProvision as ContractProvision
-from ontology.models.country import Country as Country
 from ontology.models.creative_work import CreativeWork as CreativeWork
 from ontology.models.debt_instrument import DebtInstrument as DebtInstrument
 from ontology.models.defined_term import DefinedTerm as DefinedTerm
