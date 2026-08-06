@@ -1,8 +1,3 @@
-"""Reusable field metadata. Each property maps to its schema.org counterpart
-in the JSON-LD context (data/input/context.json), so the field descriptions
-are copied from schema.org.
-"""
-
 from pydantic import Field
 
 

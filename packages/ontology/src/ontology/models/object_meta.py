@@ -1,6 +1,3 @@
-"""Class-level model metadata, fed into model_config (title +
-json_schema_extra)."""
-
 import re
 
 from pydantic.config import JsonDict
@@ -25,9 +22,6 @@ class ObjectMeta:
     title: str
     named_individuals: list[NamedIndividual] | None
 
-    # "@type" is not a valid Python keyword argument, so the constructor takes
-    # type_ instead. The named-individual registry is injected rather than
-    # imported, so ObjectMeta holds no global state.
     def __init__(
         self,
         *,
@@ -58,8 +52,6 @@ class ObjectMeta:
             "title": self.title,
         }
         if self.named_individuals is not None:
-            # Rebuilt as dict literals: a TypedDict is not assignable to the
-            # (invariant) dict[str, JsonValue] that JsonDict values require.
             extra["namedIndividuals"] = [
                 {
                     "@id": ni["@id"],

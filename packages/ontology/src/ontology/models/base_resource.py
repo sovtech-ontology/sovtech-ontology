@@ -1,11 +1,3 @@
-"""Abstract base for all resources.
-
-Every resource has an "@id", typed with Iri, so compact IRIs (CURIEs) are
-expanded ahead of AnyUrl validation. Subclasses narrow the id type where the
-model requires it (e.g. to a named-individual enum) and serialize/validate
-under the JSON-LD "@id" alias.
-"""
-
 import json
 from abc import ABC, abstractmethod
 from typing import cast

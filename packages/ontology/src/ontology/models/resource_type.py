@@ -1,11 +1,3 @@
-"""The valid "@type" discriminators: one per concrete model in
-sovereign-prospectus-ontology-initial.md — the 17 TBox classes plus the 19
-CBox enumeration classes.
-
-The abstract shared shapes (CreativeWork, RoleBase) are deliberately absent:
-they are never instantiated, so nothing carries them as a "@type".
-"""
-
 from typing import Literal
 
 ResourceType = Literal[
