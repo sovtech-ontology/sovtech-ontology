@@ -3,17 +3,17 @@ from typing import Annotated, Literal, override
 from pydantic import AnyUrl, ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
-from ontology.models.debt_instrument_type import DebtInstrumentType
-from ontology.models.interest_rate_type import InterestRateType
+from ontology.models.cbox.debt_instrument_type import DebtInstrumentType
+from ontology.models.cbox.interest_rate_type import InterestRateType
+from ontology.models.cbox.payment_frequency import PaymentFrequency
+from ontology.models.cbox.seniority import Seniority
 from ontology.models.iri import Iri
 from ontology.models.monetary_amount import MonetaryAmount
 from ontology.models.named_individual_iri_enum import named_individual_iri_enum
 from ontology.models.named_individuals import named_individuals
 from ontology.models.object_meta import ObjectMeta
-from ontology.models.payment_frequency import PaymentFrequency
 from ontology.models.property_meta import PropertyMeta
 from ontology.models.quantitative_value import QuantitativeValue
-from ontology.models.seniority import Seniority
 from ontology.models.thing import Thing
 from ontology.models.timestamp import Timestamp
 

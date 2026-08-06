@@ -2,8 +2,8 @@ from typing import Annotated, Literal, override
 
 from pydantic import AnyUrl, ConfigDict, Field
 
+from ontology.models.cbox.document_section_type import DocumentSectionType
 from ontology.models.creative_work import CreativeWork
-from ontology.models.document_section_type import DocumentSectionType
 from ontology.models.iri import Iri
 from ontology.models.named_individual_iri_enum import named_individual_iri_enum
 from ontology.models.named_individuals import named_individuals

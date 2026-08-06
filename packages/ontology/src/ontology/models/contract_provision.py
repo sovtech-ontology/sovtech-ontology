@@ -4,19 +4,23 @@ from pydantic import AnyUrl, ConfigDict, Field
 
 from ontology.models.agreement import Agreement
 from ontology.models.base_resource import BaseResource
-from ontology.models.collective_action_clause_type import CollectiveActionClauseType
+from ontology.models.cbox.collective_action_clause_type import (
+    CollectiveActionClauseType,
+)
+from ontology.models.cbox.pari_passu_type import PariPassuType
+from ontology.models.cbox.provision_type import ProvisionType
+from ontology.models.cbox.sovereign_immunity_waiver_type import (
+    SovereignImmunityWaiverType,
+)
+from ontology.models.cbox.voting_aggregation_method import VotingAggregationMethod
 from ontology.models.iri import Iri
 from ontology.models.named_individual_iri_enum import named_individual_iri_enum
 from ontology.models.named_individuals import named_individuals
 from ontology.models.object_meta import ObjectMeta
-from ontology.models.pari_passu_type import PariPassuType
 from ontology.models.property_meta import PropertyMeta
-from ontology.models.provision_type import ProvisionType
 from ontology.models.quantitative_value import QuantitativeValue
-from ontology.models.sovereign_immunity_waiver_type import SovereignImmunityWaiverType
 from ontology.models.text_object import TextObject
 from ontology.models.thing import Thing
-from ontology.models.voting_aggregation_method import VotingAggregationMethod
 
 
 def _object_meta() -> ObjectMeta:

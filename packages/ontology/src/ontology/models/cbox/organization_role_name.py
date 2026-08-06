@@ -3,11 +3,11 @@ from typing import Annotated, Literal, override
 from pydantic import AnyUrl, ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
+from ontology.models.cbox.organization_role_category import OrganizationRoleCategory
 from ontology.models.iri import Iri
 from ontology.models.named_individual_iri_enum import named_individual_iri_enum
 from ontology.models.named_individuals import named_individuals
 from ontology.models.object_meta import ObjectMeta
-from ontology.models.organization_role_category import OrganizationRoleCategory
 from ontology.models.property_meta import PropertyMeta
 from ontology.models.thing import Thing
 
