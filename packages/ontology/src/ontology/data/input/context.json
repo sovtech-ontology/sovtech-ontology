@@ -230,6 +230,10 @@
             "@id": "schema:publisher",
             "@type": "@id"
         },
+        "recordedIn": {
+            "@id": "schema:recordedIn",
+            "@type": "@id"
+        },
         "related": {
             "@id": "skos:related",
             "@type": "@id",
@@ -249,10 +253,6 @@
         },
         "sha256": "svto:sha256",
         "source": "svto:source",
-        "sourceText": {
-            "@id": "svto:sourceText",
-            "@type": "@id"
-        },
         "startDate": "schema:startDate",
         "text": "schema:text",
         "underProvision": {

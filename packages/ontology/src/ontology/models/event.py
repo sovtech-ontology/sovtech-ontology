@@ -78,14 +78,14 @@ class Event(BaseResource):
         ).generate_meta(),
     ] = None
     name: Annotated[str | None, Thing.Fields.NAME] = None
-    source_text: Annotated[
+    recorded_in: Annotated[
         Iri | None,
         PropertyMeta(
             description="The text this event was reconstructed from.",
             range_=TextObject,
-            title="Source Text",
+            title="Recorded In",
         ).generate_meta(),
-    ] = Field(default=None, alias="sourceText")
+    ] = Field(default=None, alias="recordedIn")
     start_date: Annotated[
         Timestamp | None,
         Thing.Fields.START_DATE,

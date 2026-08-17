@@ -101,14 +101,14 @@ class DefinedTerm(BaseResource):
             title="Related",
         ).generate_meta(),
     ] = None
-    source_text: Annotated[
+    recorded_in: Annotated[
         Iri | None,
         PropertyMeta(
             description="The definitions text this term was read from.",
             range_=TextObject,
-            title="Source Text",
+            title="Recorded In",
         ).generate_meta(),
-    ] = Field(default=None, alias="sourceText")
+    ] = Field(default=None, alias="recordedIn")
 
     @classmethod
     @override

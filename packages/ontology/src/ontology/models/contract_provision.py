@@ -121,14 +121,14 @@ class ContractProvision(BaseResource):
             title="Provision Type",
         ).generate_meta(),
     ] = Field(alias="provisionType")
-    source_text: Annotated[
+    recorded_in: Annotated[
         Iri | None,
         PropertyMeta(
             description=("The document text this provision was extracted from."),
             range_=TextObject,
-            title="Source Text",
+            title="Recorded In",
         ).generate_meta(),
-    ] = Field(default=None, alias="sourceText")
+    ] = Field(default=None, alias="recordedIn")
     uniformly_applicable_required: Annotated[
         bool | None,
         PropertyMeta(
