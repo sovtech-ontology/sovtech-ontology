@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
 from ontology.models.cbox import CreditorType, DebtorType
@@ -38,9 +38,8 @@ class Organization(BaseResource):
     type_: Literal["Organization"] = Field(alias="@type")
     description: Annotated[str | None, Thing.Fields.DESCRIPTION] = None
     creditor_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("CreditorType"),
-        Thing.Fields.ADDITIONAL_TYPE,
         PropertyMeta(
             description=(
                 "The classification of a creditor by kind (official "
@@ -52,9 +51,8 @@ class Organization(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="creditorType")
     debtor_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("DebtorType"),
-        Thing.Fields.ADDITIONAL_TYPE,
         PropertyMeta(
             description=(
                 "The public-sector classification of an obligor (issuer or "

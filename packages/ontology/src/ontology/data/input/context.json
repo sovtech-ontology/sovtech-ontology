@@ -109,7 +109,7 @@
         "contentSize": "schema:contentSize",
         "contentUrl": "schema:contentUrl",
         "creditorType": {
-            "@id": "schema:additionalType",
+            "@id": "svto:creditorType",
             "@type": "@id"
         },
         "currency": "schema:currency",
@@ -119,7 +119,7 @@
             "@type": "@id"
         },
         "debtorType": {
-            "@id": "schema:additionalType",
+            "@id": "svto:debtorType",
             "@type": "@id"
         },
         "definedIn": {
