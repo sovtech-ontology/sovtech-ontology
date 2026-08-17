@@ -88,22 +88,6 @@ class DigitalDocument(CreativeWork):
             title="Has Part",
         ).generate_meta(),
     ] = Field(default=None, alias="hasPart")
-    identifier: Annotated[
-        str | None,
-        Thing.Fields.IDENTIFIER,
-        PropertyMeta(
-            description="The corpus storage key.",
-            title="Identifier",
-        ).generate_meta(),
-    ] = None
-    incorporates_by_reference: Annotated[
-        tuple[Iri, ...] | None,
-        PropertyMeta(
-            description="The documents incorporated by reference.",
-            range_="DigitalDocument",
-            title="Incorporates By Reference",
-        ).generate_meta(),
-    ] = Field(default=None, alias="incorporatesByReference")
     source: Annotated[
         str | None,
         PropertyMeta(

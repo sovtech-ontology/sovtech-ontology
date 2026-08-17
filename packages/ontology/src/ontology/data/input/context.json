@@ -159,11 +159,6 @@
             "@type": "@id"
         },
         "inLanguage": "schema:inLanguage",
-        "incorporatesByReference": {
-            "@id": "svto:incorporatesByReference",
-            "@type": "@id",
-            "@container": "@set"
-        },
         "interestPaymentFrequency": {
             "@id": "svto:interestPaymentFrequency",
             "@type": "@id"
