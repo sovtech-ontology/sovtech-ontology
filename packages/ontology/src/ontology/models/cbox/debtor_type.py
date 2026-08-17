@@ -11,9 +11,9 @@ from ontology.models.thing import Thing
 
 def _object_meta() -> ObjectMeta:
     return ObjectMeta(
-        type_="IssuerType",
+        type_="DebtorType",
         description=(
-            "A public-sector classification of issuing organizations, from "
+            "A public-sector classification of debtor organizations, from "
             "the central government out to state-owned enterprises, issuance "
             "vehicles, and supranationals."
         ),
@@ -21,8 +21,8 @@ def _object_meta() -> ObjectMeta:
     )
 
 
-class IssuerType(BaseResource):
-    """A public-sector classification of issuing organizations, from the
+class DebtorType(BaseResource):
+    """A public-sector classification of debtor organizations, from the
     central government out to state-owned enterprises, issuance vehicles,
     and supranationals."""
 
@@ -31,8 +31,8 @@ class IssuerType(BaseResource):
         json_schema_extra=_object_meta().json_schema_extra(),
     )
 
-    id: Annotated[AnyUrl, named_individual_iri_enum("IssuerType")] = Field(alias="@id")
-    type_: Literal["IssuerType"] = Field(alias="@type")
+    id: Annotated[AnyUrl, named_individual_iri_enum("DebtorType")] = Field(alias="@id")
+    type_: Literal["DebtorType"] = Field(alias="@type")
     name: Annotated[str | None, Thing.Fields.NAME] = None
     description: Annotated[str | None, Thing.Fields.DESCRIPTION] = None
 

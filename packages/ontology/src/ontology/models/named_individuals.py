@@ -1072,6 +1072,47 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
             "description": "An instrument not covered by the other categories.",
         },
     },
+    "DebtorType": {
+        "CentralGovernment": {
+            "description": (
+                "The sovereign state itself, including ministries and "
+                "treasuries acting for it."
+            ),
+        },
+        "SubSovereign": {
+            "name": "Sub-Sovereign",
+            "description": (
+                "A sub-national government or territory issuing in its own "
+                "name (Emirate of Abu Dhabi, Hong Kong SAR)."
+            ),
+        },
+        "CentralBank": {
+            "description": "The monetary authority as a distinct legal entity.",
+        },
+        "StateOwnedEnterprise": {
+            "name": "State-Owned Enterprise",
+            "description": ("A public corporation owned or controlled by the state."),
+        },
+        "IssuanceVehicle": {
+            "description": (
+                "An SPV established to issue on behalf of a public-sector "
+                "obligor (Oman Sovereign Sukuk S.A.O.C.)."
+            ),
+        },
+        "Supranational": {
+            "description": (
+                "A multilateral institution owned by member states (Asian "
+                "Development Bank)."
+            ),
+        },
+        "MultiIssuer": {
+            "name": "Multi-Issuer",
+            "description": (
+                "A composite of several issuers filing jointly; constituents "
+                "carried as members."
+            ),
+        },
+    },
     "DocumentClass": {
         "Prospectus": {
             "description": (
@@ -1224,47 +1265,6 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
         },
         "Other": {
             "description": ("A rate structure not covered by the other categories."),
-        },
-    },
-    "IssuerType": {
-        "CentralGovernment": {
-            "description": (
-                "The sovereign state itself, including ministries and "
-                "treasuries acting for it."
-            ),
-        },
-        "SubSovereign": {
-            "name": "Sub-Sovereign",
-            "description": (
-                "A sub-national government or territory issuing in its own "
-                "name (Emirate of Abu Dhabi, Hong Kong SAR)."
-            ),
-        },
-        "CentralBank": {
-            "description": "The monetary authority as a distinct legal entity.",
-        },
-        "StateOwnedEnterprise": {
-            "name": "State-Owned Enterprise",
-            "description": ("A public corporation owned or controlled by the state."),
-        },
-        "IssuanceVehicle": {
-            "description": (
-                "An SPV established to issue on behalf of a public-sector "
-                "obligor (Oman Sovereign Sukuk S.A.O.C.)."
-            ),
-        },
-        "Supranational": {
-            "description": (
-                "A multilateral institution owned by member states (Asian "
-                "Development Bank)."
-            ),
-        },
-        "MultiIssuer": {
-            "name": "Multi-Issuer",
-            "description": (
-                "A composite of several issuers filing jointly; constituents "
-                "carried as members."
-            ),
         },
     },
     "OrganizationRoleCategory": {

@@ -17,7 +17,7 @@ ResourceType = Literal[
     "EventType",
     "GoverningLaw",
     "InterestRateType",
-    "IssuerType",
+    "DebtorType",
     "MediaObject",
     "MonetaryAmount",
     "Organization",

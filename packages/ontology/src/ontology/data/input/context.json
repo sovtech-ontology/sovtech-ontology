@@ -13,6 +13,7 @@
         "CreativeWork": "schema:CreativeWork",
         "DebtInstrument": "svto:DebtInstrument",
         "DebtInstrumentType": "svto:DebtInstrumentType",
+        "DebtorType": "svto:DebtorType",
         "DefinedTerm": "skos:Concept",
         "DigitalDocument": "schema:DigitalDocument",
         "DocumentClass": "svto:DocumentClass",
@@ -21,7 +22,6 @@
         "EventType": "svto:EventType",
         "GoverningLaw": "svto:GoverningLaw",
         "InterestRateType": "svto:InterestRateType",
-        "IssuerType": "svto:IssuerType",
         "MediaObject": "schema:MediaObject",
         "MonetaryAmount": "schema:MonetaryAmount",
         "Organization": "schema:Organization",
@@ -112,6 +112,10 @@
             "@id": "svto:debtInstrumentType",
             "@type": "@id"
         },
+        "debtorType": {
+            "@id": "schema:additionalType",
+            "@type": "@id"
+        },
         "definedIn": {
             "@id": "svto:definedIn",
             "@type": "@id"
@@ -178,10 +182,6 @@
         "issueDate": "svto:issueDate",
         "issuePrice": {
             "@id": "svto:issuePrice",
-            "@type": "@id"
-        },
-        "issuerType": {
-            "@id": "schema:additionalType",
             "@type": "@id"
         },
         "jurisdiction": {

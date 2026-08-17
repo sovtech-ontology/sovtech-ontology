@@ -9,12 +9,12 @@ from ontology.models.cbox import (
     CollectiveActionClauseType,
     Country,
     DebtInstrumentType,
+    DebtorType,
     DocumentClass,
     DocumentSectionType,
     EventType,
     GoverningLaw,
     InterestRateType,
-    IssuerType,
     OrganizationRoleCategory,
     OrganizationRoleName,
     PariPassuType,
@@ -58,7 +58,7 @@ Resource = Annotated[
     | EventType
     | GoverningLaw
     | InterestRateType
-    | IssuerType
+    | DebtorType
     | MediaObject
     | MonetaryAmount
     | Organization
