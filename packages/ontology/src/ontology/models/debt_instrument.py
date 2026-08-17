@@ -146,6 +146,16 @@ class DebtInstrument(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="maturityDate")
     name: Annotated[str | None, Thing.Fields.NAME] = None
+    repayment_currency: Annotated[
+        str | None,
+        PropertyMeta(
+            description=(
+                "The ISO 4217 repayment currency, where it differs from the "
+                "denomination currency."
+            ),
+            title="Repayment Currency",
+        ).generate_meta(),
+    ] = Field(default=None, alias="repaymentCurrency")
     seniority: Annotated[
         AnyUrl | None,
         named_individual_iri_enum("Seniority"),

@@ -241,6 +241,7 @@
             "@type": "@id",
             "@container": "@set"
         },
+        "repaymentCurrency": "svto:repaymentCurrency",
         "roleName": {
             "@id": "schema:roleName",
             "@type": "@id"
