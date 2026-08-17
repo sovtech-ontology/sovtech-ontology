@@ -19,7 +19,7 @@ def _object_meta() -> ObjectMeta:
         type_="Event",
         description=(
             "A dated or triggered occurrence in the life of an instrument or "
-            "agreement: issuance, settlement, an actual default, an "
+            "agreement: settlement, an actual default, an "
             "acceleration. Contract language describing default triggers is "
             "a ContractProvision; the thing that happens is an Event."
         ),
@@ -29,7 +29,7 @@ def _object_meta() -> ObjectMeta:
 
 class Event(BaseResource):
     """A dated or triggered occurrence in the life of an instrument or
-    agreement: issuance, settlement, an actual default, an acceleration.
+    agreement: settlement, an actual default, an acceleration.
     Contract language describing default triggers is a ContractProvision;
     the thing that happens is an Event."""
 

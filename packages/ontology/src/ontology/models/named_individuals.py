@@ -1224,20 +1224,11 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
         },
     },
     "EventType": {
-        "Issuance": {
-            "description": "The instrument is issued.",
-        },
         "Settlement": {
             "description": "The issue settles; money and securities move.",
         },
-        "EffectiveDate": {
-            "description": "An agreement or amendment takes effect.",
-        },
         "InterestPayment": {
             "description": "A scheduled coupon payment.",
-        },
-        "Maturity": {
-            "description": "Scheduled final repayment of principal.",
         },
         "Default": {
             "description": (

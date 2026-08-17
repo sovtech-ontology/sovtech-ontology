@@ -15,7 +15,7 @@ def _object_meta() -> ObjectMeta:
         type_="EventType",
         description=(
             "A classification of occurrences in the life of an instrument or "
-            "agreement (issuance, settlement, default, acceleration)."
+            "agreement (settlement, default, acceleration)."
         ),
         named_individuals=named_individuals,
     )
@@ -23,7 +23,7 @@ def _object_meta() -> ObjectMeta:
 
 class EventType(BaseResource):
     """A classification of occurrences in the life of an instrument or
-    agreement (issuance, settlement, default, acceleration)."""
+    agreement (settlement, default, acceleration)."""
 
     model_config = ConfigDict(
         title=_object_meta().title,
