@@ -1052,6 +1052,33 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
             "description": "Zimbabwe. ISO 3166-1 ZWE / ZW / 716. UN member state.",
         },
     },
+    "CreditorType": {
+        "OfficialBilateral": {
+            "description": (
+                "A government or its export credit or development agency "
+                "lending bilaterally."
+            ),
+        },
+        "Multilateral": {
+            "description": (
+                "A multilateral development bank or international financial "
+                "institution."
+            ),
+        },
+        "CommercialBank": {
+            "description": (
+                "A commercial bank or bank syndicate lending on market terms."
+            ),
+        },
+        "CapitalMarkets": {
+            "description": (
+                "Dispersed bondholders reached through capital markets issuance."
+            ),
+        },
+        "Other": {
+            "description": "A creditor not covered by the other categories.",
+        },
+    },
     "DebtInstrumentType": {
         "Bond": {
             "description": "A long-term marketable debt security.",

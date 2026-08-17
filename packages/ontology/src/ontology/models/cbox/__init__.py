@@ -3,6 +3,7 @@ from ontology.models.cbox.collective_action_clause_type import (
     CollectiveActionClauseType as CollectiveActionClauseType,
 )
 from ontology.models.cbox.country import Country as Country
+from ontology.models.cbox.creditor_type import CreditorType as CreditorType
 from ontology.models.cbox.debt_instrument_type import (
     DebtInstrumentType as DebtInstrumentType,
 )

@@ -11,6 +11,7 @@
         "ContractProvision": "svto:ContractProvision",
         "Country": "schema:Country",
         "CreativeWork": "schema:CreativeWork",
+        "CreditorType": "svto:CreditorType",
         "DebtInstrument": "svto:DebtInstrument",
         "DebtInstrumentType": "svto:DebtInstrumentType",
         "DebtorType": "svto:DebtorType",
@@ -106,6 +107,10 @@
         },
         "contentSize": "schema:contentSize",
         "contentUrl": "schema:contentUrl",
+        "creditorType": {
+            "@id": "schema:additionalType",
+            "@type": "@id"
+        },
         "currency": "schema:currency",
         "datePublished": "schema:datePublished",
         "debtInstrumentType": {

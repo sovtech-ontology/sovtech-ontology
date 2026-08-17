@@ -8,6 +8,7 @@ from ontology.models.cbox import (
     AgreementType,
     CollectiveActionClauseType,
     Country,
+    CreditorType,
     DebtInstrumentType,
     DebtorType,
     DocumentClass,
@@ -48,6 +49,7 @@ Resource = Annotated[
     | CollectiveActionClauseType
     | ContractProvision
     | Country
+    | CreditorType
     | DebtInstrument
     | DebtInstrumentType
     | DefinedTerm

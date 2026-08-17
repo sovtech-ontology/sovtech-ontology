@@ -7,6 +7,7 @@ ResourceType = Literal[
     "CollectiveActionClauseType",
     "ContractProvision",
     "Country",
+    "CreditorType",
     "DebtInstrument",
     "DebtInstrumentType",
     "DefinedTerm",
