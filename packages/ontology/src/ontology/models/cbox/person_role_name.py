@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
 from ontology.models.cbox.person_role_category import PersonRoleCategory
@@ -33,9 +33,7 @@ class PersonRoleName(BaseResource):
         json_schema_extra=_object_meta().json_schema_extra(),
     )
 
-    id: Annotated[AnyUrl, named_individual_iri_enum("PersonRoleName")] = Field(
-        alias="@id"
-    )
+    id: Annotated[Iri, named_individual_iri_enum("PersonRoleName")] = Field(alias="@id")
     type_: Literal["PersonRoleName"] = Field(alias="@type")
     additional_type: Annotated[
         Iri | None,

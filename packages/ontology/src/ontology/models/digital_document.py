@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.cbox import DocumentClass
 from ontology.models.creative_work import CreativeWork
@@ -68,7 +68,7 @@ class DigitalDocument(CreativeWork):
         ).generate_meta(),
     ] = None
     document_class: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("DocumentClass"),
         PropertyMeta(
             description=(

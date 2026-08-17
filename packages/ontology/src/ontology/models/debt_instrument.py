@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
 from ontology.models.cbox import (
@@ -67,7 +67,7 @@ class DebtInstrument(BaseResource):
         ).generate_meta(),
     ] = None
     debt_instrument_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("DebtInstrumentType"),
         PropertyMeta(
             description="Bond, note, bill, sukuk, or loan facility.",
@@ -96,7 +96,7 @@ class DebtInstrument(BaseResource):
         ).generate_meta(),
     ] = None
     interest_payment_frequency: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("PaymentFrequency"),
         PropertyMeta(
             description="How often interest is paid.",
@@ -113,7 +113,7 @@ class DebtInstrument(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="interestRate")
     interest_rate_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("InterestRateType"),
         PropertyMeta(
             description="Fixed, floating, zero-coupon, or step-up.",
@@ -157,7 +157,7 @@ class DebtInstrument(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="repaymentCurrency")
     seniority: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("Seniority"),
         PropertyMeta(
             description="The ranking of the claim.",

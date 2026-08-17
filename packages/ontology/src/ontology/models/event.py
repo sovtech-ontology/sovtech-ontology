@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
 from ontology.models.cbox import EventType
@@ -60,7 +60,7 @@ class Event(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="endDate")
     event_type: Annotated[
-        AnyUrl,
+        Iri,
         named_individual_iri_enum("EventType"),
         PropertyMeta(
             description="The kind of occurrence.",

@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.cbox import DocumentSectionType
 from ontology.models.creative_work import CreativeWork
@@ -59,7 +59,7 @@ class TextObject(CreativeWork):
         ).generate_meta(),
     ] = Field(default=None, alias="pageStart")
     section_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("DocumentSectionType"),
         PropertyMeta(
             description=(

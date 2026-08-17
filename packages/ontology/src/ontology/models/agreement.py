@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.base_resource import BaseResource
 from ontology.models.cbox import AgreementType, GoverningLaw
@@ -40,7 +40,7 @@ class Agreement(BaseResource):
 
     type_: Literal["Agreement"] = Field(alias="@type")
     agreement_type: Annotated[
-        AnyUrl,
+        Iri,
         named_individual_iri_enum("AgreementType"),
         PropertyMeta(
             description=(
@@ -67,7 +67,7 @@ class Agreement(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="executionDate")
     governing_law: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("GoverningLaw"),
         PropertyMeta(
             description=("The body of law governing interpretation and enforcement."),

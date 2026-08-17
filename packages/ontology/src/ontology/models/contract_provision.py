@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.agreement import Agreement
 from ontology.models.base_resource import BaseResource
@@ -50,7 +50,7 @@ class ContractProvision(BaseResource):
 
     type_: Literal["ContractProvision"] = Field(alias="@type")
     cac_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("CollectiveActionClauseType"),
         PropertyMeta(
             description=("For collective action clauses: the CAC generation."),
@@ -68,7 +68,7 @@ class ContractProvision(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="gracePeriod")
     immunity_waiver_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("SovereignImmunityWaiverType"),
         PropertyMeta(
             description=("For sovereign immunity waivers: full, none, or selective."),
@@ -90,7 +90,7 @@ class ContractProvision(BaseResource):
     ] = Field(default=None, alias="isPartOf")
     name: Annotated[str | None, Thing.Fields.NAME] = None
     pari_passu_type: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("PariPassuType"),
         PropertyMeta(
             description=(
@@ -113,7 +113,7 @@ class ContractProvision(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="perSeriesVotingThreshold")
     provision_type: Annotated[
-        AnyUrl,
+        Iri,
         named_individual_iri_enum("ProvisionType"),
         PropertyMeta(
             description="The kind of clause.",
@@ -140,7 +140,7 @@ class ContractProvision(BaseResource):
         ).generate_meta(),
     ] = Field(default=None, alias="uniformlyApplicableRequired")
     voting_aggregation_method: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("VotingAggregationMethod"),
         PropertyMeta(
             description=(

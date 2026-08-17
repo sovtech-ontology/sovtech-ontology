@@ -1,6 +1,6 @@
 from typing import Annotated, Literal, override
 
-from pydantic import AnyUrl, ConfigDict, Field
+from pydantic import ConfigDict, Field
 
 from ontology.models.cbox import PersonRoleName
 from ontology.models.iri import Iri
@@ -45,7 +45,7 @@ class PersonRole(RoleBase):
         ).generate_meta(),
     ] = Field(default=None, alias="memberOf")
     role_name: Annotated[
-        AnyUrl | None,
+        Iri | None,
         named_individual_iri_enum("PersonRoleName"),
         Thing.Fields.ROLE_NAME,
         PropertyMeta(
