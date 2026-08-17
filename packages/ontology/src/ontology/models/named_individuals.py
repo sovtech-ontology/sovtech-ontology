@@ -137,7 +137,7 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
         },
         "BES": {
             "name": "Bonaire, Sint Eustatius and Saba",
-            "description": "Bonaire / Sint Eustatius / Saba. ISO 3166-1 BES / BQ / 535. Sovereignty: Netherlands.",
+            "description": "Bonaire, Sint Eustatius and Saba. ISO 3166-1 BES / BQ / 535. Sovereignty: Netherlands.",
         },
         "BFA": {
             "name": "Burkina Faso",
@@ -841,11 +841,11 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
         },
         "SHN": {
             "name": "Saint Helena, Ascension and Tristan da Cunha",
-            "description": "Tristan da Cunha. ISO 3166-1 SHN / SH / 654. Sovereignty: United Kingdom.",
+            "description": "Saint Helena, Ascension and Tristan da Cunha. ISO 3166-1 SHN / SH / 654. Sovereignty: United Kingdom.",
         },
         "SJM": {
             "name": "Svalbard and Jan Mayen",
-            "description": "Jan Mayen. ISO 3166-1 SJM / SJ / 744. Sovereignty: Norway.",
+            "description": "Svalbard and Jan Mayen. ISO 3166-1 SJM / SJ / 744. Sovereignty: Norway.",
         },
         "SLB": {
             "name": "Solomon Islands",
@@ -968,8 +968,8 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
             "description": "Tuvalu. ISO 3166-1 TUV / TV / 798. UN member state.",
         },
         "TWN": {
-            "name": "Taiwan Taiwan",
-            "description": "Taiwan Taiwan (Province of China). ISO 3166-1 TWN / TW / 158. Sovereignty: Disputed.",
+            "name": "Taiwan",
+            "description": "Taiwan (Province of China). ISO 3166-1 TWN / TW / 158. Sovereignty: Disputed.",
         },
         "TZA": {
             "name": "Tanzania",
