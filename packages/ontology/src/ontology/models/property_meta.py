@@ -26,7 +26,6 @@ class PropertyMeta:
     # range_ follows the same trailing-underscore convention as
     # ObjectMeta.type_.
     description: str
-    formula: str | None
     range_: ResourceType | tuple[ResourceType, ...] | None
     title: str
 
@@ -34,12 +33,10 @@ class PropertyMeta:
         self,
         *,
         description: str,
-        formula: str | None = None,
         range_: RangeTarget | Sequence[RangeTarget] | None = None,
         title: str,
     ) -> None:
         self.description = description
-        self.formula = formula
         self.title = title
 
         self.range_ = None
@@ -58,9 +55,6 @@ class PropertyMeta:
             extra["range"] = list(self.range_)
         elif self.range_ is not None:
             extra["range"] = self.range_
-        if self.formula is not None:
-            extra["formula"] = self.formula
-
         field_info: FieldInfo = Field(
             title=self.title,
             description=self.description,
