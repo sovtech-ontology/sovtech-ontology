@@ -5,6 +5,7 @@ from ontology.models.base_resource import default_context as default_context
 from ontology.models.config import Config as Config
 from ontology.models.contract_provision import ContractProvision as ContractProvision
 from ontology.models.creative_work import CreativeWork as CreativeWork
+from ontology.models.credit_rating import CreditRating as CreditRating
 from ontology.models.debt_instrument import DebtInstrument as DebtInstrument
 from ontology.models.defined_term import DefinedTerm as DefinedTerm
 from ontology.models.digital_document import DigitalDocument as DigitalDocument

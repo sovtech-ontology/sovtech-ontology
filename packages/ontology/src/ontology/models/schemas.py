@@ -24,6 +24,7 @@ from ontology.models.cbox import (
     VotingAggregationMethod,
 )
 from ontology.models.contract_provision import ContractProvision
+from ontology.models.credit_rating import CreditRating
 from ontology.models.debt_instrument import DebtInstrument
 from ontology.models.defined_term import DefinedTerm
 from ontology.models.digital_document import DigitalDocument
@@ -45,6 +46,7 @@ schemas = (
     CollectiveActionClauseType,
     ContractProvision,
     Country,
+    CreditRating,
     CreditorType,
     DebtInstrument,
     DebtInstrumentType,

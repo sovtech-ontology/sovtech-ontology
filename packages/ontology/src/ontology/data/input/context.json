@@ -11,6 +11,7 @@
         "ContractProvision": "svto:ContractProvision",
         "Country": "schema:Country",
         "CreativeWork": "schema:CreativeWork",
+        "CreditRating": "schema:Rating",
         "CreditorType": "svto:CreditorType",
         "DebtInstrument": "svto:DebtInstrument",
         "DebtInstrumentType": "svto:DebtInstrumentType",
@@ -230,6 +231,7 @@
             "@id": "schema:publisher",
             "@type": "@id"
         },
+        "ratingValue": "schema:ratingValue",
         "recordedIn": {
             "@id": "schema:recordedIn",
             "@type": "@id"
