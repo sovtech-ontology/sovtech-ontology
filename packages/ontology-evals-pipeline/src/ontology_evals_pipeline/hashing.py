@@ -9,8 +9,7 @@ from typing import TypedDict
 
 from datasketch import MinHash
 
-from ontology.models import Resource
-from ontology.models.namespaces import SVTO_CBOX
+from ontology.models import SVTO_CBOX, Resource, is_absolute_iri
 
 
 class HashedResource(TypedDict):
@@ -22,28 +21,24 @@ def resource_tokens(resource: Resource) -> frozenset[str]:
     """The data tokens of a resource: every field/value pair except its own
     @id and references to other minted resources."""
     data = resource.model_dump(mode="json", by_alias=True, exclude_none=True)
-    tokens: set[str] = set()
-    for field, value in data.items():
-        if field == "@id":
-            continue
-        values = value if isinstance(value, list) else [value]
-        for item in values:
-            if _is_minted_iri(item):
-                continue
-            tokens.add(f"{field}={item}")
-    return frozenset(tokens)
+    return frozenset(
+        f"{field}={item}"
+        for field, value in data.items()
+        if field != "@id"
+        for item in (value if isinstance(value, list) else [value])
+        if not _is_minted_iri(item)
+    )
 
 
 def hash_resource(resource: Resource, *, num_perm: int) -> HashedResource:
     minhash = MinHash(num_perm=num_perm)
-    for token in sorted(resource_tokens(resource)):
-        minhash.update(token.encode("utf-8"))
+    minhash.update_batch([token.encode("utf-8") for token in resource_tokens(resource)])
     return HashedResource(model=resource, hash=minhash)
 
 
 def _is_minted_iri(value: object) -> bool:
     return (
         isinstance(value, str)
-        and value.startswith(("http://", "https://"))
+        and is_absolute_iri(value)
         and not value.startswith(SVTO_CBOX)
     )

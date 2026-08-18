@@ -11,7 +11,6 @@ from ontology_evals_pipeline.hashing import HashedResource
 class EvaluationReport(BaseModel):
     extracted_count: int
     ground_truth_count: int
-    matched_count: int
     matches: tuple[tuple[str, str], ...]
     unmatched_extracted: tuple[str, ...]
     unmatched_ground_truth: tuple[str, ...]
@@ -27,16 +26,16 @@ def evaluate(
 ) -> EvaluationReport:
     lsh = MinHashLSH(threshold=threshold, num_perm=num_perm)
     for index, hashed in enumerate(ground_truth):
-        lsh.insert(str(index), hashed["hash"])
+        lsh.insert(index, hashed["hash"])
 
     unclaimed = dict(enumerate(ground_truth))
     matches: list[tuple[str, str]] = []
     unmatched_extracted: list[str] = []
     for hashed in extracted:
         candidates = [
-            int(str(key))
+            key
             for key in lsh.query(hashed["hash"])
-            if int(str(key)) in unclaimed
+            if isinstance(key, int) and key in unclaimed
         ]
         if candidates:
             best = max(
@@ -50,14 +49,13 @@ def evaluate(
     return EvaluationReport(
         extracted_count=len(extracted),
         ground_truth_count=len(ground_truth),
-        matched_count=len(matches),
         matches=tuple(matches),
         unmatched_extracted=tuple(unmatched_extracted),
         unmatched_ground_truth=tuple(_label(hashed) for hashed in unclaimed.values()),
-        passed=None if not ground_truth else len(matches) == len(ground_truth),
+        passed=len(matches) == len(ground_truth) if ground_truth else None,
     )
 
 
 def _label(hashed: HashedResource) -> str:
     model = hashed["model"]
-    return f"{type(model).__name__} {model.id}"
+    return f"{model.type_} {model.id}"

@@ -8,5 +8,4 @@ class BondProspectus(BaseModel):
 
     identifier: str
     path: Path
-    page_count: int
     text: str

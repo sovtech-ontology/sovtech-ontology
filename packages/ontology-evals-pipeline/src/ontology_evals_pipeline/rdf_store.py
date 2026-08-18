@@ -6,30 +6,27 @@ from pyoxigraph import DefaultGraph, RdfFormat, Store
 
 from ontology.models import Resource
 
-_FORMATS = {
-    "turtle": RdfFormat.TURTLE,
-    "ntriples": RdfFormat.N_TRIPLES,
-    "nquads": RdfFormat.N_QUADS,
-    "rdfxml": RdfFormat.RDF_XML,
-    "trig": RdfFormat.TRIG,
-}
-
 
 def store_resources(
     resources: list[Resource],
     context: dict[str, object],
     output_dir: Path,
     *,
-    rdf_format: str = "turtle",
+    rdf_format: str = "ttl",
 ) -> Path:
-    rdf = _FORMATS[rdf_format]
+    """rdf_format is a file extension resolved by pyoxigraph ("ttl", "nq",
+    "rdf", ...)."""
+    rdf = RdfFormat.from_extension(rdf_format)
+    if rdf is None:
+        raise ValueError(f"unknown RDF format extension: {rdf_format!r}")
     store = Store()
-    for resource in resources:
-        store.load(resource.to_rdf(context).encode("utf-8"), format=RdfFormat.N_QUADS)
+    nquads = "".join(resource.to_rdf(context) for resource in resources)
+    store.load(nquads.encode("utf-8"), format=RdfFormat.N_QUADS)
     output_dir.mkdir(parents=True, exist_ok=True)
     destination = output_dir / f"resources.{rdf.file_extension}"
-    if rdf.supports_datasets:
-        store.dump(str(destination), format=rdf)
-    else:
-        store.dump(str(destination), format=rdf, from_graph=DefaultGraph())
+    store.dump(
+        str(destination),
+        format=rdf,
+        from_graph=None if rdf.supports_datasets else DefaultGraph(),
+    )
     return destination

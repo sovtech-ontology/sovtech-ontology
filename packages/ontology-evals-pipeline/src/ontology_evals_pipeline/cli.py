@@ -1,13 +1,13 @@
 """Typer CLI: the only module that reads Config. Stages hand off through
-files in the output directory so each can run alone."""
+files in the output directory so each can run alone; run composes them
+without re-reading what it already holds."""
 
 from pathlib import Path
 
 import logfire
 import typer
-from pydantic import TypeAdapter
 
-from ontology.models import Resource
+from ontology.models import Resource, ResourceListAdapter, default_context
 from ontology_evals_pipeline import (
     evaluator,
     harness,
@@ -22,22 +22,42 @@ app = typer.Typer(
     help="Evaluate LLM extraction of ontology instances from bond prospectuses."
 )
 
-_RESOURCES = TypeAdapter(list[Resource])
 _EXTRACTED_FILENAME = "extracted.json"
 _REPORT_FILENAME = "report.json"
-
-
-@app.callback()
-def main() -> None:
-    """Telemetry: a no-op without LOGFIRE_TOKEN, full tracing with one."""
-    logfire.configure(send_to_logfire="if-token-present")
-    logfire.instrument_pydantic_ai()
 
 
 @app.command()
 def extract() -> None:
     """Read prospectuses and extract ontology resources with the LLM."""
+    _extract(Config())
+
+
+@app.command()
+def evaluate() -> None:
+    """Compare extracted resources to RDF ground truth and write a report."""
     config = Config()
+    _evaluate(config, _read_extracted(config.output_dir))
+
+
+@app.command()
+def store() -> None:
+    """Load extracted resources into an RDF store and serialize the graph."""
+    config = Config()
+    _store(config, _read_extracted(config.output_dir))
+
+
+@app.command()
+def run() -> None:
+    """Extract, evaluate, and store, end to end."""
+    config = Config()
+    resources = _extract(config)
+    _evaluate(config, resources)
+    _store(config, resources)
+
+
+def _extract(config: Config) -> list[Resource]:
+    logfire.configure(send_to_logfire="if-token-present")
+    logfire.instrument_pydantic_ai()
     prospectuses = prospectus_reader.read_prospectuses(
         config.prospectuses_dir, use_marker=config.use_marker
     )
@@ -51,22 +71,22 @@ def extract() -> None:
     config.output_dir.mkdir(parents=True, exist_ok=True)
     destination = config.output_dir / _EXTRACTED_FILENAME
     destination.write_bytes(
-        _RESOURCES.dump_json(resources, by_alias=True, exclude_none=True, indent=2)
+        ResourceListAdapter.dump_json(
+            resources, by_alias=True, exclude_none=True, indent=2
+        )
     )
     typer.echo(
         f"{len(resources)} resources from {len(prospectuses)} prospectuses"
         f" -> {destination}"
     )
+    return resources
 
 
-@app.command()
-def evaluate() -> None:
-    """Compare extracted resources to RDF ground truth and write a report."""
-    config = Config()
-    context = rdf_reader.load_context(config.jsonld_context)
+def _evaluate(config: Config, resources: list[Resource]) -> None:
+    context = default_context()
     extracted = [
         hashing.hash_resource(resource, num_perm=config.lsh_num_perm)
-        for resource in _read_extracted(config.output_dir)
+        for resource in resources
     ]
     ground_truth = [
         hashing.hash_resource(resource, num_perm=config.lsh_num_perm)
@@ -78,34 +98,23 @@ def evaluate() -> None:
         threshold=config.lsh_threshold,
         num_perm=config.lsh_num_perm,
     )
+    payload = report.model_dump_json(indent=2)
     destination = config.output_dir / _REPORT_FILENAME
-    destination.write_text(report.model_dump_json(indent=2), encoding="utf-8")
-    typer.echo(report.model_dump_json(indent=2))
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(payload, encoding="utf-8")
+    typer.echo(payload)
     typer.echo(f"report -> {destination}")
 
 
-@app.command()
-def store() -> None:
-    """Load extracted resources into an RDF store and serialize the graph."""
-    config = Config()
-    context = rdf_reader.load_context(config.jsonld_context)
-    resources = _read_extracted(config.output_dir)
+def _store(config: Config, resources: list[Resource]) -> None:
     destination = rdf_store.store_resources(
-        resources, context, config.output_dir, rdf_format=config.rdf_format
+        resources, default_context(), config.output_dir, rdf_format=config.rdf_format
     )
     typer.echo(f"{len(resources)} resources -> {destination}")
-
-
-@app.command()
-def run() -> None:
-    """Extract, evaluate, and store, end to end."""
-    extract()
-    evaluate()
-    store()
 
 
 def _read_extracted(output_dir: Path) -> list[Resource]:
     path = output_dir / _EXTRACTED_FILENAME
     if not path.is_file():
         raise typer.BadParameter(f"no extracted resources at {path}; run extract first")
-    return _RESOURCES.validate_json(path.read_text(encoding="utf-8"))
+    return ResourceListAdapter.validate_json(path.read_text(encoding="utf-8"))
