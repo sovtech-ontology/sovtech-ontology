@@ -9,6 +9,7 @@ resolution-markers = [
 [manifest]
 members = [
     "ontology",
+    "ontology-evals-pipeline",
     "sovtech-ontology",
     "tap-pdip",
     "target-oxigraph",
@@ -362,6 +363,11 @@ requires-dist = [
 ]
 
 [[package]]
+name = "ontology-evals-pipeline"
+version = "0.1.0"
+source = { editable = "packages/ontology-evals-pipeline" }
+
+[[package]]
 name = "packaging"
 version = "26.2"
 source = { registry = "https://pypi.org/simple" }
@@ -579,6 +585,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "ontology" },
+    { name = "ontology-evals-pipeline" },
     { name = "tap-pdip" },
     { name = "target-oxigraph" },
     { name = "target-rdf-file" },
@@ -598,6 +605,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "ontology", editable = "packages/ontology" },
+    { name = "ontology-evals-pipeline", editable = "packages/ontology-evals-pipeline" },
     { name = "tap-pdip", editable = "packages/tap-pdip" },
     { name = "target-oxigraph", editable = "packages/target-oxigraph" },
     { name = "target-rdf-file", editable = "packages/target-rdf-file" },
