@@ -33,3 +33,4 @@ test-results/
 # OS files
 .DS_Store
 Thumbs.db
+packages/ontology-evals-pipeline/src/ontology_evals_pipeline/data/output/

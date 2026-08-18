@@ -4,7 +4,26 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "datasketch>=1.6.5",
+    "ontology",
+    "pdfplumber>=0.11.0",
+    "pydantic>=2.13.4",
+    "pydantic-ai-slim[anthropic]>=1.44.0",
+    "pyoxigraph>=0.4.0",
+    "typer>=0.15.0",
+]
+
+[project.optional-dependencies]
+marker = [
+    "marker-pdf>=1.10.0",
+]
+
+[project.scripts]
+ontology-evals = "ontology_evals_pipeline.cli:app"
+
+[tool.uv.sources]
+ontology = { workspace = true }
 
 [build-system]
 requires = ["uv_build>=0.11.18,<0.12"]
