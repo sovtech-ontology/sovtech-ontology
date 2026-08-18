@@ -11,6 +11,7 @@ from ontology.models.defined_term import DefinedTerm as DefinedTerm
 from ontology.models.digital_document import DigitalDocument as DigitalDocument
 from ontology.models.event import Event as Event
 from ontology.models.expand_curie import expand_curie as expand_curie
+from ontology.models.expand_curie import is_absolute_iri as is_absolute_iri
 from ontology.models.iri import Iri as Iri
 from ontology.models.iri_enum import IriEnum as IriEnum
 from ontology.models.media_object import MediaObject as MediaObject
@@ -24,6 +25,7 @@ from ontology.models.namespaces import SCHEMA as SCHEMA
 from ontology.models.namespaces import SKOS as SKOS
 from ontology.models.namespaces import SVTO as SVTO
 from ontology.models.namespaces import SVTO_CBOX as SVTO_CBOX
+from ontology.models.namespaces import SVTO_DATA as SVTO_DATA
 from ontology.models.object_meta import ObjectMeta as ObjectMeta
 from ontology.models.organization import Organization as Organization
 from ontology.models.organization_role import OrganizationRole as OrganizationRole
@@ -34,6 +36,7 @@ from ontology.models.property_meta import PropertyMeta as PropertyMeta
 from ontology.models.quantitative_value import QuantitativeValue as QuantitativeValue
 from ontology.models.resource import Resource as Resource
 from ontology.models.resource import ResourceAdapter as ResourceAdapter
+from ontology.models.resource import ResourceListAdapter as ResourceListAdapter
 from ontology.models.resource_type import ResourceType as ResourceType
 from ontology.models.role_base import RoleBase as RoleBase
 from ontology.models.schemas import schemas as schemas

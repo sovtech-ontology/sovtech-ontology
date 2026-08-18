@@ -10,11 +10,15 @@ PREFIXES: dict[str, str] = {
 }
 
 
+def is_absolute_iri(value: str) -> bool:
+    """Whether the value is an absolute IRI (http:, https:, urn:, etc.)."""
+    return bool(
+        re.compile(r"^[a-z][a-z0-9+.-]*://", re.IGNORECASE).match(value)
+    ) or value.startswith("urn:")
+
+
 def expand_curie(value: str) -> str | None:
-    # Already an absolute IRI (http:, https:, urn:, etc.)? Pass through.
-    if re.compile(r"^[a-z][a-z0-9+.-]*://", re.IGNORECASE).match(
-        value
-    ) or value.startswith("urn:"):
+    if is_absolute_iri(value):
         return value
 
     match = re.compile(r"^([A-Za-z_][\w.-]*):(.+)$").match(value)

@@ -86,3 +86,4 @@ Resource = Annotated[
 ]
 
 ResourceAdapter: TypeAdapter[Resource] = TypeAdapter(Resource)
+ResourceListAdapter: TypeAdapter[list[Resource]] = TypeAdapter(list[Resource])
