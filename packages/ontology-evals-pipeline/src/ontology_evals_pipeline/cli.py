@@ -3,6 +3,7 @@ files in the output directory so each can run alone."""
 
 from pathlib import Path
 
+import logfire
 import typer
 from pydantic import TypeAdapter
 
@@ -24,6 +25,13 @@ app = typer.Typer(
 _RESOURCES = TypeAdapter(list[Resource])
 _EXTRACTED_FILENAME = "extracted.json"
 _REPORT_FILENAME = "report.json"
+
+
+@app.callback()
+def main() -> None:
+    """Telemetry: a no-op without LOGFIRE_TOKEN, full tracing with one."""
+    logfire.configure(send_to_logfire="if-token-present")
+    logfire.instrument_pydantic_ai()
 
 
 @app.command()
