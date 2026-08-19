@@ -28,6 +28,8 @@ ignore = [
 
 [lint.per-file-ignores]
 "**/tests/**" = ["S101"]
+# The CLI boundary invokes the 1Password CLI with a fixed argument list.
+"**/spa_etl/cli.py" = ["S603"]
 
 [lint.isort]
 known-first-party = ["ontology", "ontology_evals_pipeline", "sovereign_prospectus_advisor", "sovtech_ontology", "tap_pdip", "target_oxigraph", "target_rdf_file"]
