@@ -7,6 +7,7 @@ merge. Everything else gets
 document's), cbox-name is the resource's primary classification, and a
 missing name is guessed from both and written back onto the instance."""
 
+import re
 import uuid
 from datetime import date, datetime
 
@@ -108,7 +109,10 @@ def _date_segments(resource: Resource, document_date: date | None) -> list[str]:
 
 
 def _slug(name: str) -> str:
-    return name.strip().lower().replace(" ", "-")
+    """Lower-cased, spaces to hyphens, reduced to IRI-safe unreserved
+    characters."""
+    lowered = name.strip().lower().replace(" ", "-")
+    return re.sub(r"[^a-z0-9._~-]+", "-", lowered).strip("-") or "unnamed"
 
 
 def _kebab(camel: str) -> str:
