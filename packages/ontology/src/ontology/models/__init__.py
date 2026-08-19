@@ -27,6 +27,7 @@ from ontology.models.namespaces import SVTO as SVTO
 from ontology.models.namespaces import SVTO_CBOX as SVTO_CBOX
 from ontology.models.namespaces import SVTO_DATA as SVTO_DATA
 from ontology.models.object_meta import ObjectMeta as ObjectMeta
+from ontology.models.object_meta import capital_case as capital_case
 from ontology.models.organization import Organization as Organization
 from ontology.models.organization_role import OrganizationRole as OrganizationRole
 from ontology.models.person import Person as Person
