@@ -2,7 +2,7 @@
 
 Value nodes get a urn:uuid derived from their data, so identical values
 merge. Everything else gets
-{SVTO_DATA}{exchange}/{document-class}/{tbox-name}/[YYYY/MM/DD/]
+{SVTO_DATA}{exchange}/[{document-class}/]{tbox-name}/[YYYY/MM/DD/]
 [{cbox-name}/]{name}, where the date is the resource's primary date (or the
 document's), cbox-name is the resource's primary classification, and a
 missing name is guessed from both and written back onto the instance."""
@@ -41,7 +41,7 @@ def mint(
     resource: Resource,
     *,
     exchange: str,
-    document_class: str,
+    document_class: str | None = None,
     document_date: date | None = None,
 ) -> Resource:
     """The resource with a deterministic @id (and a guessed name, if it had
@@ -53,7 +53,7 @@ def mint(
     name = _name(resource, facet)
     segments = [
         _slug(exchange),
-        _slug(document_class),
+        *([_slug(document_class)] if document_class else []),
         _kebab(resource.type_),
         *_date_segments(resource, document_date),
         *([_kebab(facet)] if facet else []),
