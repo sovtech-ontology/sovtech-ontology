@@ -17,6 +17,7 @@ resolution-markers = [
 members = [
     "ontology",
     "ontology-evals-pipeline",
+    "sovereign-prospectus-advisor",
     "sovtech-ontology",
     "tap-pdip",
     "target-oxigraph",
@@ -2450,12 +2451,45 @@ wheels = [
 ]
 
 [[package]]
+name = "sovereign-prospectus-advisor"
+version = "0.1.0"
+source = { editable = "packages/sovereign-prospectus-advisor" }
+dependencies = [
+    { name = "logfire" },
+    { name = "ontology" },
+    { name = "pdfplumber" },
+    { name = "pydantic" },
+    { name = "pydantic-ai-slim", extra = ["anthropic"] },
+    { name = "pyoxigraph" },
+    { name = "typer" },
+]
+
+[package.optional-dependencies]
+marker = [
+    { name = "marker-pdf" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "logfire", specifier = ">=3.5.0" },
+    { name = "marker-pdf", marker = "extra == 'marker'", specifier = ">=1.10.0" },
+    { name = "ontology", editable = "packages/ontology" },
+    { name = "pdfplumber", specifier = ">=0.11.0" },
+    { name = "pydantic", specifier = ">=2.13.4" },
+    { name = "pydantic-ai-slim", extras = ["anthropic"], specifier = ">=1.44.0" },
+    { name = "pyoxigraph", specifier = ">=0.4.0" },
+    { name = "typer", specifier = ">=0.15.0" },
+]
+provides-extras = ["marker"]
+
+[[package]]
 name = "sovtech-ontology"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "ontology" },
     { name = "ontology-evals-pipeline" },
+    { name = "sovereign-prospectus-advisor" },
     { name = "tap-pdip" },
     { name = "target-oxigraph" },
     { name = "target-rdf-file" },
@@ -2476,6 +2510,7 @@ dev = [
 requires-dist = [
     { name = "ontology", editable = "packages/ontology" },
     { name = "ontology-evals-pipeline", editable = "packages/ontology-evals-pipeline" },
+    { name = "sovereign-prospectus-advisor", editable = "packages/sovereign-prospectus-advisor" },
     { name = "tap-pdip", editable = "packages/tap-pdip" },
     { name = "target-oxigraph", editable = "packages/target-oxigraph" },
     { name = "target-rdf-file", editable = "packages/target-rdf-file" },
