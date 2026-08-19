@@ -19,7 +19,8 @@ class IriEnum(GroupedMetadata):
         yield AfterValidator(self._check_membership)
         yield Field(json_schema_extra={"enum": list(self.allowed_iris)})
 
-    def _check_membership(self, iri: AnyUrl) -> AnyUrl:
-        if str(iri) not in self.allowed_iris:
+    def _check_membership(self, iri: AnyUrl | None) -> AnyUrl | None:
+        """None passes through: optional enum fields accept explicit null."""
+        if iri is not None and str(iri) not in self.allowed_iris:
             raise ValueError(f'"{iri}" is not one of {list(self.allowed_iris)}')
         return iri
