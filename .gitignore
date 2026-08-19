@@ -36,3 +36,5 @@ Thumbs.db
 packages/ontology-evals-pipeline/src/ontology_evals_pipeline/data/output/
 packages/sovereign-prospectus-advisor/src/sovereign_prospectus_advisor/data/input/prospectuses/
 packages/sovereign-prospectus-advisor/src/sovereign_prospectus_advisor/data/output/
+.env.local
+.env.secret
