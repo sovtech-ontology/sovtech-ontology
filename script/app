@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+cd "$(dirname "$0")/.."
+
+(cd packages/sovereign-prospectus-advisor/frontend && npm run build)
+uv run spa-server
