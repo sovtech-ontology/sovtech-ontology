@@ -17,7 +17,7 @@ resolution-markers = [
 members = [
     "ontology",
     "ontology-evals-pipeline",
-    "sovereign-prospectus-advisor",
+    "sovereign-debt-monitor",
     "sovtech-ontology",
     "tap-pdip",
     "target-oxigraph",
@@ -2467,9 +2467,9 @@ wheels = [
 ]
 
 [[package]]
-name = "sovereign-prospectus-advisor"
+name = "sovereign-debt-monitor"
 version = "0.1.0"
-source = { editable = "packages/sovereign-prospectus-advisor" }
+source = { editable = "packages/sovereign-debt-monitor" }
 dependencies = [
     { name = "fastapi" },
     { name = "httpx" },
@@ -2511,7 +2511,7 @@ source = { editable = "." }
 dependencies = [
     { name = "ontology" },
     { name = "ontology-evals-pipeline" },
-    { name = "sovereign-prospectus-advisor" },
+    { name = "sovereign-debt-monitor" },
     { name = "tap-pdip" },
     { name = "target-oxigraph" },
     { name = "target-rdf-file" },
@@ -2532,7 +2532,7 @@ dev = [
 requires-dist = [
     { name = "ontology", editable = "packages/ontology" },
     { name = "ontology-evals-pipeline", editable = "packages/ontology-evals-pipeline" },
-    { name = "sovereign-prospectus-advisor", editable = "packages/sovereign-prospectus-advisor" },
+    { name = "sovereign-debt-monitor", editable = "packages/sovereign-debt-monitor" },
     { name = "tap-pdip", editable = "packages/tap-pdip" },
     { name = "target-oxigraph", editable = "packages/target-oxigraph" },
     { name = "target-rdf-file", editable = "packages/target-rdf-file" },

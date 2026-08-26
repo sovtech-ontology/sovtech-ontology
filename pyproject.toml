@@ -7,7 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "ontology",
     "ontology-evals-pipeline",
-    "sovereign-prospectus-advisor",
+    "sovereign-debt-monitor",
     "tap-pdip",
     "target-oxigraph",
     "target-rdf-file",
@@ -17,7 +17,7 @@ dependencies = [
 [tool.uv.sources]
 ontology = { workspace = true }
 ontology-evals-pipeline = { workspace = true }
-sovereign-prospectus-advisor = { workspace = true }
+sovereign-debt-monitor = { workspace = true }
 tap-pdip = { workspace = true }
 target-oxigraph = { workspace = true }
 target-rdf-file = { workspace = true }
@@ -47,7 +47,7 @@ profile = "black"
 known_first_party = [
     "ontology",
     "ontology_evals_pipeline",
-    "sovereign_prospectus_advisor",
+    "sovereign_debt_monitor",
     "sovtech_ontology",
     "tap_pdip",
     "target_oxigraph",
@@ -60,7 +60,7 @@ testpaths = [
     "tests",
     "packages/ontology/tests",
     "packages/ontology-evals-pipeline/tests",
-    "packages/sovereign-prospectus-advisor/tests",
+    "packages/sovereign-debt-monitor/tests",
     "packages/tap-pdip/tests",
     "packages/target-oxigraph/tests",
     "packages/target-rdf-file/tests",

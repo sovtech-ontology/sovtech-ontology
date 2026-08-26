@@ -3,7 +3,7 @@
         "src",
         "packages/ontology/src",
         "packages/ontology-evals-pipeline/src",
-        "packages/sovereign-prospectus-advisor/src",
+        "packages/sovereign-debt-monitor/src",
         "packages/tap-pdip/src",
         "packages/target-oxigraph/src",
         "packages/target-rdf-file/src"
