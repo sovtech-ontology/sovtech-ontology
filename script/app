@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -e
-set -o pipefail
-
-cd "$(dirname "$0")/.."
-
-(cd packages/sovereign-debt-monitor/frontend && npm run build)
-uv run spa-server

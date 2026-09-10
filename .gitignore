@@ -34,7 +34,6 @@ test-results/
 .DS_Store
 Thumbs.db
 packages/ontology-evals-pipeline/src/ontology_evals_pipeline/data/output/
-packages/sovereign-debt-monitor/src/sovereign_debt_monitor/data/input/prospectuses/
-packages/sovereign-debt-monitor/src/sovereign_debt_monitor/data/output/
+packages/sovereign-debt-monitor/
 .env.local
 .env.secret
