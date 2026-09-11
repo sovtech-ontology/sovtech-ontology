@@ -234,7 +234,8 @@
         "ratingValue": "schema:ratingValue",
         "recordedIn": {
             "@id": "schema:recordedIn",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "related": {
             "@id": "skos:related",

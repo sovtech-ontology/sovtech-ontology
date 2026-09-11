@@ -79,9 +79,9 @@ class Event(BaseResource):
     ] = None
     name: Annotated[str | None, Thing.Fields.NAME] = None
     recorded_in: Annotated[
-        Iri | None,
+        tuple[Iri, ...] | None,
         PropertyMeta(
-            description="The text this event was reconstructed from.",
+            description="The texts this event was reconstructed from.",
             range_=TextObject,
             title="Recorded In",
         ).generate_meta(),

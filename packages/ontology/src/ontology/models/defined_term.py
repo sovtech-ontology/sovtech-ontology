@@ -102,9 +102,9 @@ class DefinedTerm(BaseResource):
         ).generate_meta(),
     ] = None
     recorded_in: Annotated[
-        Iri | None,
+        tuple[Iri, ...] | None,
         PropertyMeta(
-            description="The definitions text this term was read from.",
+            description="The definitions texts this term was read from.",
             range_=TextObject,
             title="Recorded In",
         ).generate_meta(),

@@ -122,9 +122,9 @@ class ContractProvision(BaseResource):
         ).generate_meta(),
     ] = Field(alias="provisionType")
     recorded_in: Annotated[
-        Iri | None,
+        tuple[Iri, ...] | None,
         PropertyMeta(
-            description=("The document text this provision was extracted from."),
+            description="The document texts this provision was extracted from.",
             range_=TextObject,
             title="Recorded In",
         ).generate_meta(),
