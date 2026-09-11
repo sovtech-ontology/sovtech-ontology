@@ -88,6 +88,17 @@ class DigitalDocument(CreativeWork):
             title="Has Part",
         ).generate_meta(),
     ] = Field(default=None, alias="hasPart")
+    identifier: Annotated[
+        tuple[str, ...] | None,
+        Thing.Fields.IDENTIFIER,
+        PropertyMeta(
+            description=(
+                "Corpus identifiers of this document: storage keys it absorbed, "
+                "the SEC accession number, and the PDIP record ids."
+            ),
+            title="Identifier",
+        ).generate_meta(),
+    ] = None
     source: Annotated[
         str | None,
         PropertyMeta(

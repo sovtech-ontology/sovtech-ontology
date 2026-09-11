@@ -202,6 +202,10 @@
         },
         "maturityDate": "svto:maturityDate",
         "maxValue": "schema:maxValue",
+        "member": {
+            "@id": "schema:member",
+            "@type": "@id"
+        },
         "memberOf": {
             "@id": "schema:memberOf",
             "@type": "@id"
