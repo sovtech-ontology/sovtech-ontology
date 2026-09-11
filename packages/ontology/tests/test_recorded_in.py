@@ -15,16 +15,15 @@ _TERM = {
     "prefLabel": "External Indebtedness",
     "definedIn": _DOC,
 }
-_EVENT = {"@type": "Event", "eventType": "svto-cbox:DefaultEventType"}
 
 
 @pytest.mark.parametrize(
     ("model", "node"),
-    [(ContractProvision, _PROVISION), (DefinedTerm, _TERM), (Event, _EVENT)],
-    ids=["provision", "term", "event"],
+    [(ContractProvision, _PROVISION), (DefinedTerm, _TERM)],
+    ids=["provision", "term"],
 )
 def test_resource_records_one_triple_per_text_anchor(
-    model: type[ContractProvision | DefinedTerm | Event], node: dict[str, str]
+    model: type[ContractProvision | DefinedTerm], node: dict[str, str]
 ) -> None:
     resource = model.model_validate(
         {"@id": f"{_DOC}/{node['@type'].lower()}/x", "recordedIn": _ANCHORS, **node}
@@ -32,3 +31,16 @@ def test_resource_records_one_triple_per_text_anchor(
     assert resource.recorded_in is not None
     assert [str(anchor) for anchor in resource.recorded_in] == _ANCHORS
     assert resource.to_rdf(default_context()).count(_RECORDED_IN) == len(_ANCHORS)
+
+
+def test_event_records_a_single_text_anchor() -> None:
+    event = Event.model_validate(
+        {
+            "@id": f"{_DOC}/event/default/2016-09-13",
+            "@type": "Event",
+            "eventType": "svto-cbox:DefaultEventType",
+            "recordedIn": _ANCHORS[0],
+        }
+    )
+    assert str(event.recorded_in) == _ANCHORS[0]
+    assert event.to_rdf(default_context()).count(_RECORDED_IN) == 1
