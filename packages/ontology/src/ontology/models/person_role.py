@@ -35,6 +35,14 @@ class PersonRole(RoleBase):
     )
 
     type_: Literal["PersonRole"] = Field(alias="@type")
+    member: Annotated[
+        Iri | None,
+        PropertyMeta(
+            description="The person who fills this role.",
+            range_="Person",
+            title="Member",
+        ).generate_meta(),
+    ] = None
     member_of: Annotated[
         Iri | None,
         Thing.Fields.MEMBER_OF,
@@ -44,14 +52,6 @@ class PersonRole(RoleBase):
             title="Member Of",
         ).generate_meta(),
     ] = Field(default=None, alias="memberOf")
-    member: Annotated[
-        Iri | None,
-        PropertyMeta(
-            description="The person who fills this role.",
-            range_="Person",
-            title="Member",
-        ).generate_meta(),
-    ] = None
     role_name: Annotated[
         Iri | None,
         named_individual_iri_enum("PersonRoleName"),
