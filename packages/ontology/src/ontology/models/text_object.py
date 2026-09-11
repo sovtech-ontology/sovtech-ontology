@@ -35,6 +35,19 @@ class TextObject(CreativeWork):
     )
 
     type_: Literal["TextObject"] = Field(alias="@type")
+    about: Annotated[
+        tuple[Iri, ...] | None,
+        Thing.Fields.ABOUT,
+        PropertyMeta(
+            description=(
+                "The subjects this text is about: the instruments, agreements, "
+                "and organizations it discusses, or the provision it is "
+                "evidence for."
+            ),
+            range_=("DebtInstrument", "Agreement", "Organization", "ContractProvision"),
+            title="About",
+        ).generate_meta(),
+    ] = None
     is_part_of: Annotated[
         Iri | None,
         Thing.Fields.IS_PART_OF,
