@@ -2,7 +2,6 @@
     "include": [
         "src",
         "packages/ontology/src",
-        "packages/ontology-evals-pipeline/src",
         "packages/tap-pdip/src",
         "packages/target-oxigraph/src",
         "packages/target-rdf-file/src"

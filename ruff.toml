@@ -30,7 +30,7 @@ ignore = [
 "**/tests/**" = ["S101"]
 
 [lint.isort]
-known-first-party = ["ontology", "ontology_evals_pipeline", "sovtech_ontology", "tap_pdip", "target_oxigraph", "target_rdf_file"]
+known-first-party = ["ontology", "sovtech_ontology", "tap_pdip", "target_oxigraph", "target_rdf_file"]
 
 [format]
 quote-style = "double"
