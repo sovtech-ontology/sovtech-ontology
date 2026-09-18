@@ -1441,7 +1441,7 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
             "name": "Exchange-eligible debt",
             "description": "Financial Terms: Exchange-eligible debt.",
         },
-        "FinalRepaymentMaturityDateS": {
+        "FinalRepaymentMaturityDates": {
             "name": "Final Repayment/Maturity Date(s)",
             "description": "Financial Terms: Final Repayment/Maturity Date(s).",
         },
