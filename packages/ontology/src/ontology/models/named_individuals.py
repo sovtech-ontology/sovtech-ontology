@@ -1219,6 +1219,12 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
             "name": "Plan of Distribution",
             "description": "Underwriting and distribution arrangements.",
         },
+        "TableOfContents": {
+            "name": "Table of Contents",
+            "description": (
+                "A table of contents or index line naming a section and its page."
+            ),
+        },
         "Other": {
             "description": "A section not covered by the other categories.",
         },
@@ -1423,110 +1429,465 @@ named_individuals: dict[str, dict[str, dict[str, str]]] = {
         },
     },
     "ProvisionType": {
-        "Definitions": {
-            "description": (
-                "Defines terms used in the agreement; the anchor for DefinedTerms."
-            ),
+        "Commitment": {
+            "name": "Commitment",
+            "description": "Financial Terms: Commitment.",
         },
-        "GoverningLaw": {
-            "description": (
-                "Selects the legal framework governing interpretation and enforcement."
-            ),
+        "CurrencyOfDenominationAndOrPayment": {
+            "name": "Currency of Denomination and/or Payment",
+            "description": "Financial Terms: Currency of Denomination and/or Payment.",
         },
-        "Jurisdiction": {
-            "description": (
-                "Specifies which courts hear disputes; often includes "
-                "process-agent appointment."
-            ),
+        "ExchangeEligibleDebt": {
+            "name": "Exchange-eligible debt",
+            "description": "Financial Terms: Exchange-eligible debt.",
         },
-        "PaymentTerms": {
-            "description": (
-                "Amount, timing, and mechanics of interest and principal payments."
-            ),
+        "FinalRepaymentMaturityDateS": {
+            "name": "Final Repayment/Maturity Date(s)",
+            "description": "Financial Terms: Final Repayment/Maturity Date(s).",
         },
-        "FacilityCommitment": {
-            "name": "Facility / Commitment",
-            "description": ("Size and financial terms of a promise to lend."),
+        "Interest": {
+            "name": "Interest",
+            "description": "Financial Terms: Interest.",
         },
-        "Drawdown": {
-            "name": "Drawdown / Utilization",
-            "description": ("When and how a commitment to lend turns into debt."),
+        "Fees": {
+            "name": "Fees",
+            "description": "Financial Terms: Fees.",
         },
-        "ConditionsPrecedent": {
-            "description": (
-                "What must happen before money moves: authority, approvals, "
-                "opinions, information."
-            ),
+        "Purpose": {
+            "name": "Purpose",
+            "description": "Financial Terms: Purpose.",
         },
-        "RepresentationsAndWarranties": {
-            "name": "Representations and Warranties",
-            "description": (
-                "The borrower testifies to key facts and is liable for lies."
-            ),
+        "Maturity": {
+            "name": "Maturity",
+            "description": "Financial Terms: Maturity.",
         },
-        "Covenant": {
-            "description": (
-                "A promise by the issuer on financial management, "
-                "information, or conduct."
-            ),
+        "UseOfProceedsFinancialTerms": {
+            "name": "Use of Proceeds (Financial Terms)",
+            "description": "Financial Terms: Use of Proceeds (Financial Terms).",
+        },
+        "UtilizationBorrowing": {
+            "name": "Utilization/Borrowing",
+            "description": "Disbursement: Utilization/Borrowing.",
+        },
+        "AppointmentReplacementOfTrusteeFiscalAgent": {
+            "name": "Appointment/Replacement of Trustee/Fiscal Agent",
+            "description": "Administration: Appointment/Replacement of Trustee/Fiscal Agent.",
+        },
+        "RightsAndDutiesOfTrusteeFiscalAgent": {
+            "name": "Rights and Duties of Trustee/Fiscal Agent",
+            "description": "Administration: Rights and Duties of Trustee/Fiscal Agent.",
+        },
+        "TrusteeFiscalAgentIndemnities": {
+            "name": "Trustee/Fiscal Agent Indemnities",
+            "description": "Administration: Trustee/Fiscal Agent Indemnities.",
+        },
+        "PaymentMechanics": {
+            "name": "Payment Mechanics",
+            "description": "Repayment: Payment Mechanics.",
+        },
+        "PartialPayment": {
+            "name": "Partial Payment",
+            "description": "Repayment: Partial Payment.",
+        },
+        "DeferralOfPayments": {
+            "name": "Deferral of Payments",
+            "description": "Repayment: Deferral of Payments.",
+        },
+        "MaturityExtension": {
+            "name": "Maturity Extension",
+            "description": "Repayment: Maturity Extension.",
+        },
+        "MandatoryPrepaymentCancellation": {
+            "name": "Mandatory Prepayment/Cancellation",
+            "description": "Repayment: Mandatory Prepayment/Cancellation.",
+        },
+        "VoluntaryPrepayments": {
+            "name": "Voluntary Prepayments",
+            "description": "Repayment: Voluntary Prepayments.",
+        },
+        "IncreasedCostsCreditor": {
+            "name": "Increased Costs (Creditor)",
+            "description": "Repayment: Increased Costs (Creditor).",
+        },
+        "TaxGrossUpTaxIndemnities": {
+            "name": "Tax Gross-Up/Tax Indemnities",
+            "description": "Repayment: Tax Gross-Up/Tax Indemnities.",
+        },
+        "OtherIndemnities": {
+            "name": "Other Indemnities",
+            "description": "Repayment: Other Indemnities.",
+        },
+        "AvailabilityPeriodCancellationOfCommitment": {
+            "name": "Availability Period/Cancellation of Commitment",
+            "description": "Repayment: Availability Period/Cancellation of Commitment.",
+        },
+        "BorrowerCancellation": {
+            "name": "Borrower Cancellation",
+            "description": "Repayment: Borrower Cancellation.",
+        },
+        "DeferralOfPaymentsSCDI": {
+            "name": "Deferral of Payments/SCDI",
+            "description": "Repayment: Deferral of Payments/SCDI.",
+        },
+        "ValueRecoveryVRI": {
+            "name": "Value Recovery/VRI",
+            "description": "Repayment: Value Recovery/VRI.",
+        },
+        "OtherContingentRepaymentFeatures": {
+            "name": "Other Contingent Repayment Features",
+            "description": "Repayment: Other Contingent Repayment Features.",
+        },
+        "RedemptionRepurchaseEarlyRepayment": {
+            "name": "Redemption/Repurchase/Early Repayment",
+            "description": "Repayment: Redemption/Repurchase/Early Repayment.",
+        },
+        "AdditionalAmounts": {
+            "name": "Additional Amounts",
+            "description": "Repayment: Additional Amounts.",
+        },
+        "Indebtedness": {
+            "name": "Indebtedness",
+            "description": "Definitions: Indebtedness.",
+        },
+        "AntiCorruptionAMLRepresentationsAndWarranties": {
+            "name": "Anti-corruption/AML",
+            "description": "Representations and Warranties: Anti-corruption/AML.",
+        },
+        "AuthorizationsAndApprovals": {
+            "name": "Authorizations and Approvals",
+            "description": "Representations and Warranties: Authorizations and Approvals.",
+        },
+        "NoProceedingsNoViolations": {
+            "name": "No proceedings/No violations",
+            "description": "Representations and Warranties: No proceedings/No violations.",
+        },
+        "ExchangeControlsRW": {
+            "name": "Exchange Controls (R & W)",
+            "description": "Representations and Warranties: Exchange Controls (R & W).",
+        },
+        "CommercialActs": {
+            "name": "Commercial Acts",
+            "description": "Representations and Warranties: Commercial Acts.",
+        },
+        "InformationDisclosure": {
+            "name": "Information Disclosure",
+            "description": "Representations and Warranties: Information Disclosure.",
+        },
+        "NoDefault": {
+            "name": "No Default",
+            "description": "Representations and Warranties: No Default.",
+        },
+        "PowerAndAuthority": {
+            "name": "Power and Authority",
+            "description": "Representations and Warranties: Power and Authority.",
+        },
+        "SanctionsRW": {
+            "name": "Sanctions (R & W)",
+            "description": "Representations and Warranties: Sanctions (R & W).",
+        },
+        "StatusOfObligationPariPassuRW": {
+            "name": "Status of Obligation/Pari Passu (R & W)",
+            "description": "Representations and Warranties: Status of Obligation/Pari Passu (R & W).",
+        },
+        "NoSecurity": {
+            "name": "No Security",
+            "description": "Representations and Warranties: No Security.",
+        },
+        "NoTax": {
+            "name": "No Tax",
+            "description": "Representations and Warranties: No Tax.",
+        },
+        "UnknownRW": {
+            "name": "Unknown (R & W)",
+            "description": "Representations and Warranties: Unknown (R & W).",
+        },
+        "OtherRepresentationsAndWarranties": {
+            "name": "Other Representations and Warranties",
+            "description": "Representations and Warranties: Other Representations and Warranties.",
+        },
+        "ConditionsEffectiveness": {
+            "name": "Conditions (Effectiveness)",
+            "description": "Conditions Precedent: Conditions (Effectiveness).",
+        },
+        "ConditionsUtilization": {
+            "name": "Conditions (Utilization)",
+            "description": "Conditions Precedent: Conditions (Utilization).",
+        },
+        "UnknownConditionsPrecedent": {
+            "name": "Unknown (Conditions Precedent)",
+            "description": "Conditions Precedent: Unknown (Conditions Precedent).",
+        },
+        "OtherConditionsPrecedent": {
+            "name": "Other Conditions Precedent",
+            "description": "Conditions Precedent: Other Conditions Precedent.",
+        },
+        "AntiCorruptionAMLBorrowerCovenantsUndertakings": {
+            "name": "Anti-corruption/AML",
+            "description": "Borrower Covenants/Undertakings: Anti-corruption/AML.",
+        },
+        "BooksAndRecords": {
+            "name": "Books and Records",
+            "description": "Borrower Covenants/Undertakings: Books and Records.",
+        },
+        "ComplianceWithAuthorizations": {
+            "name": "Compliance with Authorizations",
+            "description": "Borrower Covenants/Undertakings: Compliance with Authorizations.",
+        },
+        "LimitsOnExternalIndebtedness": {
+            "name": "Limits on External Indebtedness",
+            "description": "Borrower Covenants/Undertakings: Limits on External Indebtedness.",
+        },
+        "IMFOtherIOMembershipInGoodStandingCU": {
+            "name": "IMF/Other IO Membership in Good Standing (C & U)",
+            "description": "Borrower Covenants/Undertakings: IMF/Other IO Membership in Good Standing (C & U).",
+        },
+        "AccessInspectionVisitation": {
+            "name": "Access/Inspection/Visitation",
+            "description": "Borrower Covenants/Undertakings: Access/Inspection/Visitation.",
+        },
+        "KYCKnowYourCustomer": {
+            "name": "KYC/Know Your Customer",
+            "description": "Borrower Covenants/Undertakings: KYC/Know Your Customer.",
+        },
+        "MaintenanceOfCreditSupport": {
+            "name": "Maintenance of Credit Support",
+            "description": "Borrower Covenants/Undertakings: Maintenance of Credit Support.",
         },
         "NegativePledge": {
-            "description": (
-                "Prohibits securing other creditors without securing this "
-                "one proportionately."
-            ),
+            "name": "Negative Pledge",
+            "description": "Borrower Covenants/Undertakings: Negative Pledge.",
         },
-        "PariPassu": {
-            "description": (
-                "Ranking of this claim relative to the issuer's other "
-                "comparable obligations."
-            ),
+        "LienPermittedLien": {
+            "name": "Lien/Permitted Lien",
+            "description": "Borrower Covenants/Undertakings: Lien/Permitted Lien.",
         },
-        "InformationUndertaking": {
-            "description": ("Reporting and disclosure obligations to creditors."),
+        "Information": {
+            "name": "Information",
+            "description": "Borrower Covenants/Undertakings: Information.",
         },
-        "EventsOfDefault": {
-            "name": "Events of Default",
-            "description": (
-                "Tripwires — non-payment, breach, misrepresentation, "
-                "moratorium — giving rise to remedies."
-            ),
+        "Notification": {
+            "name": "Notification",
+            "description": "Borrower Covenants/Undertakings: Notification.",
+        },
+        "StatusOfObligationPariPassuCU": {
+            "name": "Status of Obligation/Pari Passu (C & U)",
+            "description": "Borrower Covenants/Undertakings: Status of Obligation/Pari Passu (C & U).",
+        },
+        "RepaymentAccountOtherAccounts": {
+            "name": "Repayment Account/Other Accounts",
+            "description": "Borrower Covenants/Undertakings: Repayment Account/Other Accounts.",
+        },
+        "SanctionsCU": {
+            "name": "Sanctions (C & U)",
+            "description": "Borrower Covenants/Undertakings: Sanctions (C & U).",
+        },
+        "UseOfProceedsCU": {
+            "name": "Use of Proceeds (C & U)",
+            "description": "Borrower Covenants/Undertakings: Use of Proceeds (C & U).",
+        },
+        "UnknownCU": {
+            "name": "Unknown (C & U)",
+            "description": "Borrower Covenants/Undertakings: Unknown (C & U).",
+        },
+        "OtherBorrowerCovenantsUndertakings": {
+            "name": "Other Borrower Covenants/Undertakings",
+            "description": "Borrower Covenants/Undertakings: Other Borrower Covenants/Undertakings.",
+        },
+        "AccountsSinkingFund": {
+            "name": "Accounts/Sinking Fund",
+            "description": "Borrower Covenants/Undertakings: Accounts/Sinking Fund.",
+        },
+        "EventsOfDefaultGeneral": {
+            "name": "Events of default (General)",
+            "description": "Events of Default and Consequences: Events of default (General).",
+        },
+        "NonPaymentFailureToPay": {
+            "name": "Non-payment/Failure to Pay",
+            "description": "Events of Default and Consequences: Non-payment/Failure to Pay.",
+        },
+        "CovenantDefault": {
+            "name": "Covenant Default",
+            "description": "Events of Default and Consequences: Covenant Default.",
         },
         "CrossDefault": {
             "name": "Cross-Default",
-            "description": (
-                "A default under other indebtedness constitutes a default here."
-            ),
+            "description": "Events of Default and Consequences: Cross-Default.",
+        },
+        "ChangeInLaw": {
+            "name": "Change in Law",
+            "description": "Events of Default and Consequences: Change in Law.",
+        },
+        "ExchangeControlsEventsOfDefaultAndConsequences": {
+            "name": "Exchange Controls (Events of Default and Consequences)",
+            "description": "Events of Default and Consequences: Exchange Controls (Events of Default and Consequences).",
+        },
+        "Expropriation": {
+            "name": "Expropriation",
+            "description": "Events of Default and Consequences: Expropriation.",
+        },
+        "IMFOtherIOMembershipInGoodStandingEventsOfDefaultAndConsequences": {
+            "name": "IMF/Other IO Membership in Good Standing (Events of Default and Consequences)",
+            "description": "Events of Default and Consequences: IMF/Other IO Membership in Good Standing (Events of Default and Consequences).",
+        },
+        "InsolvencyInabilityToPay": {
+            "name": "Insolvency/Inability to Pay",
+            "description": "Events of Default and Consequences: Insolvency/Inability to Pay.",
+        },
+        "Misrepresentation": {
+            "name": "Misrepresentation",
+            "description": "Events of Default and Consequences: Misrepresentation.",
+        },
+        "RepudiationMoratorium": {
+            "name": "Repudiation/Moratorium",
+            "description": "Events of Default and Consequences: Repudiation/Moratorium.",
+        },
+        "ProceedingsJudgments": {
+            "name": "Proceedings/Judgments",
+            "description": "Events of Default and Consequences: Proceedings/Judgments.",
+        },
+        "Suspension": {
+            "name": "Suspension",
+            "description": "Events of Default and Consequences: Suspension.",
+        },
+        "UnlawfulnessIllegalityInvalidityBorrower": {
+            "name": "Unlawfulness/Illegality/Invalidity (Borrower)",
+            "description": "Events of Default and Consequences: Unlawfulness/Illegality/Invalidity (Borrower).",
+        },
+        "UnknownEventsOfDefaultAndConsequences": {
+            "name": "Unknown (Events of Default and Consequences)",
+            "description": "Events of Default and Consequences: Unknown (Events of Default and Consequences).",
+        },
+        "OtherEventsOfDefaultAndConsequences": {
+            "name": "Other Events of Default and Consequences",
+            "description": "Events of Default and Consequences: Other Events of Default and Consequences.",
         },
         "Acceleration": {
-            "description": (
-                "On default, principal can be declared due immediately; "
-                "voting rules apply."
-            ),
+            "name": "Acceleration",
+            "description": "Consequences: Acceleration.",
         },
-        "CollectiveActionClause": {
-            "description": (
-                "Binds all holders to a modification approved by a qualified majority."
-            ),
+        "VotingRequirementForAcceleration": {
+            "name": "Voting Requirement for Acceleration",
+            "description": "Consequences: Voting Requirement for Acceleration.",
         },
-        "NonReservedMatterModification": {
-            "name": "Non-Reserved Matter Modification",
-            "description": "Rules for modifying non-reserved matters.",
+        "DefaultPenaltyInterest": {
+            "name": "Default/Penalty Interest",
+            "description": "Consequences: Default/Penalty Interest.",
         },
-        "ReservedMatterModification": {
-            "description": (
-                "Rules for modifying reserved matters (payment terms and "
-                "other protected matters)."
-            ),
+        "BorrowerSetOff": {
+            "name": "Borrower Set-off",
+            "description": "Consequences: Borrower Set-off.",
+        },
+        "CreditorSetOff": {
+            "name": "Creditor Set-off",
+            "description": "Consequences: Creditor Set-off.",
+        },
+        "EnforcementAgainstCollateralOtherCreditorSelfHelp": {
+            "name": "Enforcement against Collateral/Other Creditor Self-Help",
+            "description": "Consequences: Enforcement against Collateral/Other Creditor Self-Help.",
+        },
+        "EffectOfInvaliditySeverability": {
+            "name": "Effect of Invalidity (Severability)",
+            "description": "Consequences: Effect of Invalidity (Severability).",
+        },
+        "OtherConsequences": {
+            "name": "Other Consequences",
+            "description": "Consequences: Other Consequences.",
+        },
+        "AmendmentAndWaiver": {
+            "name": "Amendment and Waiver",
+            "description": "Amendment and Waiver: Amendment and Waiver.",
+        },
+        "MeetingsIncWrittenConsent": {
+            "name": "Meetings (inc. Written Consent)",
+            "description": "Amendment and Waiver: Meetings (inc. Written Consent).",
+        },
+        "InformationDeliveryModification": {
+            "name": "Information Delivery (Modification)",
+            "description": "Amendment and Waiver: Information Delivery (Modification).",
+        },
+        "VotingCollectiveActionModification": {
+            "name": "Voting/Collective Action (Modification)",
+            "description": "Amendment and Waiver: Voting/Collective Action (Modification).",
+        },
+        "ReservedMatters": {
+            "name": "Reserved Matters",
+            "description": "Amendment and Waiver: Reserved Matters.",
+        },
+        "OtherIncRestrictions": {
+            "name": "Other, Inc. Restrictions",
+            "description": "Amendment and Waiver: Other, Inc. Restrictions.",
+        },
+        "BorrowerConfidentiality": {
+            "name": "Borrower confidentiality",
+            "description": "Confidentiality: Borrower confidentiality.",
+        },
+        "CreditorConfidentiality": {
+            "name": "Creditor confidentiality",
+            "description": "Confidentiality: Creditor confidentiality.",
+        },
+        "Disclosure": {
+            "name": "Disclosure",
+            "description": "Confidentiality: Disclosure.",
+        },
+        "UnknownConfidentiality": {
+            "name": "Unknown (Confidentiality)",
+            "description": "Confidentiality: Unknown (Confidentiality).",
+        },
+        "GoverningLaw": {
+            "name": "Governing Law",
+            "description": "Enforcement: Governing Law.",
+        },
+        "DisputeResolution": {
+            "name": "Dispute Resolution",
+            "description": "Enforcement: Dispute Resolution.",
         },
         "SovereignImmunityWaiver": {
-            "description": (
-                "The extent to which the sovereign waives immunity from suit "
-                "and execution."
-            ),
+            "name": "Sovereign Immunity Waiver",
+            "description": "Enforcement: Sovereign Immunity Waiver.",
         },
-        "Other": {
-            "description": "A provision not covered by the other categories.",
+        "SubmissionToJurisdiction": {
+            "name": "Submission to Jurisdiction",
+            "description": "Enforcement: Submission to Jurisdiction.",
+        },
+        "Guarantee": {
+            "name": "Guarantee",
+            "description": "Credit Enhancement (Formal): Guarantee.",
+        },
+        "Insurance": {
+            "name": "Insurance",
+            "description": "Credit Enhancement (Formal): Insurance.",
+        },
+        "SecurityInterestCollateral": {
+            "name": "Security Interest/Collateral",
+            "description": "Credit Enhancement (Formal): Security Interest/Collateral.",
+        },
+        "OtherCreditEnhancement": {
+            "name": "Other Credit Enhancement",
+            "description": "Credit Enhancement (Formal): Other Credit Enhancement.",
+        },
+        "CreditorSharing": {
+            "name": "Creditor Sharing",
+            "description": "Miscellaneous: Creditor Sharing.",
+        },
+        "CreditorReplacementYankABank": {
+            "name": "Creditor Replacement/Yank-a-Bank",
+            "description": "Miscellaneous: Creditor Replacement/Yank-a-Bank.",
+        },
+        "NonRespondingLenderSnoozeYouLoose": {
+            "name": "Non-responding Lender/Snooze-You-Loose",
+            "description": "Miscellaneous: Non-responding Lender/Snooze-You-Loose.",
+        },
+        "AssignmentDelegationThirdPartyBeneficiaries": {
+            "name": "Assignment/Delegation/Third Party Beneficiaries",
+            "description": "Miscellaneous: Assignment/Delegation/Third Party Beneficiaries.",
+        },
+        "MostFavoredCreditor": {
+            "name": "Most Favored Creditor",
+            "description": "Miscellaneous: Most Favored Creditor.",
+        },
+        "LossReinstatement": {
+            "name": "Loss Reinstatement",
+            "description": "Miscellaneous: Loss Reinstatement.",
         },
     },
     "Seniority": {
