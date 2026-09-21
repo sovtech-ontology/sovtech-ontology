@@ -17,9 +17,6 @@ resolution-markers = [
 members = [
     "ontology",
     "sovtech-ontology",
-    "tap-pdip",
-    "target-oxigraph",
-    "target-rdf-file",
 ]
 
 [[package]]
@@ -586,9 +583,6 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "ontology" },
-    { name = "tap-pdip" },
-    { name = "target-oxigraph" },
-    { name = "target-rdf-file" },
 ]
 
 [package.dev-dependencies]
@@ -603,12 +597,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "ontology", editable = "packages/ontology" },
-    { name = "tap-pdip", editable = "packages/tap-pdip" },
-    { name = "target-oxigraph", editable = "packages/target-oxigraph" },
-    { name = "target-rdf-file", editable = "packages/target-rdf-file" },
-]
+requires-dist = [{ name = "ontology", editable = "packages/ontology" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -620,21 +609,6 @@ dev = [
     { name = "ruff", specifier = ">=0.15.15" },
     { name = "tee", specifier = ">=0.0.3" },
 ]
-
-[[package]]
-name = "tap-pdip"
-version = "0.1.0"
-source = { editable = "packages/tap-pdip" }
-
-[[package]]
-name = "target-oxigraph"
-version = "0.1.0"
-source = { editable = "packages/target-oxigraph" }
-
-[[package]]
-name = "target-rdf-file"
-version = "0.1.0"
-source = { editable = "packages/target-rdf-file" }
 
 [[package]]
 name = "tee"

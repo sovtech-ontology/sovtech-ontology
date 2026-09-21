@@ -34,5 +34,8 @@ test-results/
 .DS_Store
 Thumbs.db
 packages/sovereign-debt-monitor/
+packages/tap-pdip/
+packages/target-oxigraph/
+packages/target-rdf-file/
 .env.local
 .env.secret
