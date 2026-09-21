@@ -1,10 +1,7 @@
 {
     "include": [
         "src",
-        "packages/ontology/src",
-        "packages/tap-pdip/src",
-        "packages/target-oxigraph/src",
-        "packages/target-rdf-file/src"
+        "packages/ontology/src"
     ],
     "exclude": [
         "**/__pycache__",
