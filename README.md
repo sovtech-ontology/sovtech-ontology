@@ -1,6 +1,6 @@
 # SovTech Ontology
 
-An open domain model and tooling for the SovTech space: the intersection of sovereign debt, macroeconomics, international law, economics, and public policy.
+An open domain model and tooling for SovTech: the intersection of sovereign debt, macroeconomics, international law, economics, and public policy. Built by [Teal Insights](https://tealinsights.com/) and [NatureFinance](https://www.naturefinance.net/).
 
 The SovTech Ontology (SVTO) describes sovereign debt instruments, the agreements that govern them, their contract provisions, the parties that hold roles on them, and the documents that disclose them. It expresses them as linked data built on [RDF](https://www.w3.org/TR/rdf11-concepts/), [SKOS](https://www.w3.org/TR/skos-reference/), and [schema.org](https://schema.org).
 
