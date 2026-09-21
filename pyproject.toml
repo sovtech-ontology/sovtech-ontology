@@ -15,8 +15,10 @@ ontology = { workspace = true }
 members = [
     "packages/*",
 ]
-# These directories are untracked but kept on disk.
+# ontology-evals-pipeline is an empty placeholder until its branch lands.
+# The other directories are untracked but kept on disk.
 exclude = [
+    "packages/ontology-evals-pipeline",
     "packages/sovereign-debt-monitor",
     "packages/tap-pdip",
     "packages/target-oxigraph",
