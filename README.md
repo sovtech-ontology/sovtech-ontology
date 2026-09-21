@@ -1,1 +1,27 @@
-# ontology
+# SovTech Ontology
+
+An open domain model and tooling for the SovTech space: the intersection of sovereign debt, macroeconomics, international law, economics, and public policy. The SovTech Ontology (SVTO) describes sovereign debt instruments, the agreements that govern them, their contract provisions, the parties that hold roles on them, and the documents that disclose them. It expresses them as linked data built on RDF, SKOS, and schema.org.
+
+## Structure of this repository
+
+- [`packages/ontology`](./packages/ontology) — domain model: pydantic models with JSON-LD semantics and the shared JSON-LD context
+- [`packages/ontology-evals-pipeline`](./packages/ontology-evals-pipeline) — evaluation pipeline that extracts the model from source documents and scores the results
+
+## Development
+
+### Prerequisites
+
+* [Python 3.13](https://www.python.org/)
+* [uv](https://docs.astral.sh/uv/)
+
+### Install dependencies
+
+    script/bootstrap
+
+### Test
+
+    script/test
+
+## License
+
+Licensed under the [MIT License](./LICENSE).
