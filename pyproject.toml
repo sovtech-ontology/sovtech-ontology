@@ -6,21 +6,22 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "ontology",
-    "tap-pdip",
-    "target-oxigraph",
-    "target-rdf-file",
-
 ]
 
 [tool.uv.sources]
 ontology = { workspace = true }
-tap-pdip = { workspace = true }
-target-oxigraph = { workspace = true }
-target-rdf-file = { workspace = true }
 
 [tool.uv.workspace]
 members = [
     "packages/*",
+]
+
+exclude = [
+    "packages/ontology-evals-pipeline",
+    "packages/sovereign-debt-monitor",
+    "packages/tap-pdip",
+    "packages/target-oxigraph",
+    "packages/target-rdf-file",
 ]
 
 [dependency-groups]
@@ -38,12 +39,16 @@ dev = [
 requires = ["uv_build>=0.11.18,<0.12"]
 build-backend = "uv_build"
 
+[tool.isort]
+profile = "black"
+known_first_party = [
+    "ontology",
+    "sovtech_ontology",
+]
+
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib"
 testpaths = [
     "tests",
     "packages/ontology/tests",
-    "packages/tap-pdip/tests",
-    "packages/target-oxigraph/tests",
-    "packages/target-rdf-file/tests",
 ]

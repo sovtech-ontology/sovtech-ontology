@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -o pipefail
 
 cd "$(dirname "$0")/.."
 
@@ -8,4 +9,4 @@ uv run ruff format --check src packages tests
 uv run ruff check src packages tests
 uv run mypy src packages tests
 mkdir -p test-results
-uv run pytest --cov=sovtech_ontology --cov=ontology --cov=tap_pdip --cov=target_oxigraph --cov=target_rdf_file --cov-report=term-missing:skip-covered --junitxml=test-results/junit.xml -p no:warnings | tee test-results/coverage.txt
+uv run pytest --cov=sovtech_ontology --cov=ontology --cov-report=term-missing:skip-covered --junitxml=test-results/junit.xml -p no:warnings | tee test-results/coverage.txt

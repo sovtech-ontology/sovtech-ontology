@@ -24,6 +24,7 @@ dist/
 .coverage
 coverage.xml
 htmlcov/
+test-results/
 
 # Type checkers
 .pyre/
@@ -32,3 +33,9 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+packages/sovereign-debt-monitor/
+packages/tap-pdip/
+packages/target-oxigraph/
+packages/target-rdf-file/
+.env.local
+.env.secret
