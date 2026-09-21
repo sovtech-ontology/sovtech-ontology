@@ -2,7 +2,7 @@
 
 An open domain model and tooling for the SovTech space: the intersection of sovereign debt, macroeconomics, international law, economics, and public policy. The SovTech Ontology (SVTO) describes sovereign debt instruments, the agreements that govern them, their contract provisions, the parties that hold roles on them, and the documents that disclose them. It expresses them as linked data built on [RDF](https://www.w3.org/TR/rdf11-concepts/), [SKOS](https://www.w3.org/TR/skos-reference/), and [schema.org](https://schema.org).
 
-The interchange format of the ontology is built on the pattern of [`@wpg/model`](https://github.com/DataEcosystems/WickedProblemGovernance/tree/main/packages/model) from the [WickedProblemGovernance](https://github.com/DataEcosystems/WickedProblemGovernance) repository.
+The SVTO interchange format and its data model follow the pattern of [`@wpg/model`](https://github.com/DataEcosystems/WickedProblemGovernance/tree/main/packages/model) from the [WickedProblemGovernance](https://github.com/DataEcosystems/WickedProblemGovernance) repository.
 
 ## Structure of this repository
 
