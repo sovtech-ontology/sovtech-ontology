@@ -1,4 +1,4 @@
-# SovTech Ontology
+# The SovTech Ontology
 
 An open domain model and tooling for SovTech: the intersection of sovereign debt, macroeconomics, international law, economics, and public policy. Built by [Teal Insights](https://tealinsights.com/) and [NatureFinance](https://www.naturefinance.net/).
 
